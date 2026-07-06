@@ -418,5 +418,26 @@
   "ollama.error.invalidInput": "This request could not be sent. Please check the settings.",
 
   "recognize.error.imageMissing": "No image was found for this page. Please upload the page again.",
-  "recognize.error.unknown": "Something went sideways while reading this paper. Please try again."
+  "recognize.error.unknown": "Something went sideways while reading this paper. Please try again.",
+
+  "footer.local": "Everything stays on your computer.",
+  "footer.disclaimer": "Always review the app's suggestions yourself. They do not replace your own assessment.",
+  "footer.legal": "Legal and privacy",
+
+  "legal.title": "Legal",
+  "legal.intro": "GemmPen Teacher runs entirely on your computer. This page summarises the essentials on responsibility, privacy, and liability.",
+  "legal.responsibility.title": "Who is responsible",
+  "legal.responsibility.p1": "Under the GDPR, the controller for the student data being processed is you as the teacher using it, or your school. You decide which work you scan and how long you keep the data.",
+  "legal.responsibility.p2": "The developer of the app is neither the controller nor a processor. The app sends nothing to the internet, there is no developer server and no remote access. The developer never sees any data at any point.",
+  "legal.responsibility.p3": "Before using it with real student data, clear the use with your school's data protection officer, especially on private devices.",
+  "legal.privacy.title": "Privacy",
+  "legal.privacy.p1": "All data stays in a folder called data on your computer. Nothing is uploaded. Secure your computer, use codes instead of names, and delete the data when you no longer need it.",
+  "legal.disclaimer.title": "No warranty, no replacement for your assessment",
+  "legal.disclaimer.p1": "The app reads handwriting and uses an AI model to suggest marking and feedback. These can be wrong or incomplete. Always review recognised text, scores, reasons, and feedback yourself.",
+  "legal.disclaimer.p2": "The results are drafts and an aid. Responsibility for grades and feedback rests solely with the assessing teacher. Do not use the output as the sole basis for legally significant decisions.",
+  "legal.disclaimer.p3": "The software is provided without warranty. To the extent permitted by law, the developer's liability is excluded. Liability for intent, gross negligence, and injury to life, body, or health remains unaffected.",
+  "legal.imprint.title": "Imprint",
+  "legal.imprint.p1": "The app runs locally on your computer and is not a public website, so no imprint is required for it. Anyone who publishes a publicly reachable page about it should add an imprint there according to the applicable rules.",
+  "legal.notAdvice": "This page is not legal advice. For your specific use, your own legal and data protection review may be needed.",
+  "legal.moreInProject": "The full versions are in the project folder: privacy guide (PRIVACY.md) and disclaimer (DISCLAIMER.md)."
 }

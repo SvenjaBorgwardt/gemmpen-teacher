@@ -56,3 +56,11 @@ next-env.d.ts
 
 # Log-Datei des automatischen Ollama-Starts durch die Startskripte (AP10)
 /install/ollama-start.log
+
+# Interne Uebergabe- und QA-Dokumente, nicht Teil des oeffentlichen Repos
+/UEBERGABE.md
+/ABNAHME.md
+/CHECK_I18N.md
+
+# Playwright-MCP-Artefakte (Screenshots, Logs aus Browser-Checks)
+/.playwright-mcp/
