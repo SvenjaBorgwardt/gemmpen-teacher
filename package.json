@@ -1,0 +1,30 @@
+{
+  "name": "gemmpen-teacher",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test:ingest": "node --experimental-strip-types --loader ./lib/__tests__/resolve-ts.mjs --test test/ingest.test.ts",
+    "test": "node --experimental-strip-types --loader ./lib/__tests__/resolve-ts.mjs --test \"lib/**/*.test.ts\" \"test/**/*.test.ts\""
+  },
+  "dependencies": {
+    "next": "16.2.10",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.10.38",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

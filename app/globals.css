@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/*
+  Warm Paper Design (Hausregel 7)
+  Creme-Hintergruende, Amber/Gold-Akzente, Serif-Ueberschriften, DM Sans fuer Fliesztext.
+  Kategorie-Farben nur bei Bedarf.
+*/
+
+:root {
+  /* Warm Paper Basis */
+  --paper: #faf6ef;         /* Creme-Hintergrund */
+  --paper-raised: #fffdf8;  /* Karten, leicht heller */
+  --ink: #2b2620;           /* Haupttext, warmes Dunkelbraun */
+  --ink-soft: #5c5449;      /* Sekundaertext */
+  --line: #e7ddcc;          /* Trennlinien */
+
+  /* Akzente */
+  --amber: #b8860b;         /* Gold-Akzent */
+  --amber-strong: #856107;  /* Gold, kontraststark fuer Text auf Creme (WCAG 4,5:1 auf Creme und amber-soft, AP13) */
+  --amber-soft: #f3e8cf;    /* Gold-Fuellung dezent */
+
+  /* Kategorie-Farben (Hausregel 7) */
+  --cat-grammar: #B85C3A;      /* Terracotta */
+  --cat-sentence: #7A8B5A;     /* Olive */
+  --cat-vocabulary: #B8860B;   /* Gold */
+  --cat-connectives: #7A6B8A;  /* Lavendel */
+
+  /* Hinweis-/Fehlertext: dunkleres Terracotta, lesbar (WCAG 4,5:1 auf Creme,
+     AP13). Kategorie-Farbe #B85C3A bleibt fuer Chips/PDF-Spalten unveraendert. */
+  --alert: #9c4829;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-amber: var(--amber);
+  --color-amber-strong: var(--amber-strong);
+  --color-amber-soft: var(--amber-soft);
+  --color-cat-grammar: var(--cat-grammar);
+  --color-cat-sentence: var(--cat-sentence);
+  --color-cat-vocabulary: var(--cat-vocabulary);
+  --color-cat-connectives: var(--cat-connectives);
+  --color-alert: var(--alert);
+
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--ink);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* Sichtbarer Fokus fuer Tastaturbedienung */
+:focus-visible {
+  outline: 2px solid var(--amber-strong);
+  outline-offset: 2px;
+}
+
+/* Wiederverwendbare Bausteine */
+.gp-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.gp-button {
+  background: var(--amber-strong);
+  color: #fffdf8;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+.gp-button:hover { background: var(--amber); }
+
+.gp-button-ghost {
+  background: transparent;
+  color: var(--amber-strong);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.gp-button-ghost:hover { background: var(--amber-soft); }

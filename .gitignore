@@ -1,0 +1,58 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Lokale Schuelerdaten bleiben auf dem Geraet, nie ins Repo (Datenschutz).
+/data/config/*
+/data/submissions/*
+/data/dpo/*
+!/data/config/.gitkeep
+!/data/submissions/.gitkeep
+!/data/dpo/.gitkeep
+# Beispiel-Konfigurationen (Startvorlagen) gehoeren mit ins Repo.
+!/data/config/beispiele/
+!/data/config/beispiele/**
+
+# Ingest-Testdaten (regenerierbar ueber test/make_test_data.py)
+/test/fixtures
+
+# Log-Datei des automatischen Ollama-Starts durch die Startskripte (AP10)
+/install/ollama-start.log

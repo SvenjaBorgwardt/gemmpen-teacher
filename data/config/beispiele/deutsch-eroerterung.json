@@ -1,0 +1,119 @@
+{
+  "id": "deutsch-eroerterung",
+  "name": "Deutsch Eroerterung (dialektisch)",
+  "subject": "Deutsch",
+  "textLanguage": "de",
+  "feedbackLanguage": "de",
+  "classLevel": "Berufskolleg",
+  "level": "B2",
+  "gradingSystem": "grades-1-6",
+  "feedbackStyle": {
+    "tone": "warm und sachlich",
+    "length": "medium",
+    "includePractice": true
+  },
+  "forbiddenWords": [
+    "falsch",
+    "schlecht",
+    "mangelhaft",
+    "fehlt",
+    "wrong",
+    "bad",
+    "poor",
+    "fail",
+    "lack",
+    "weak",
+    "missing",
+    "incorrect"
+  ],
+  "rubric": {
+    "taskPrompt": "Verfasse eine dialektische Eroerterung zur Frage, ob soziale Netzwerke am Arbeitsplatz erlaubt sein sollten. Baue eine Einleitung, einen These-Teil (Argumente dafuer, steigend), einen Antithese-Teil (Argumente dagegen, steigend) und einen begruendeten Schluss mit eigener Position. Belege jedes Argument mit einem Beispiel.",
+    "expectedPoints": [
+      "Einleitung fuehrt zum Thema hin und nennt die Streitfrage",
+      "These-Teil mit mindestens zwei Argumenten dafuer, steigend angeordnet",
+      "Jedes These-Argument mit Begruendung und Beispiel",
+      "Antithese-Teil mit mindestens zwei Argumenten dagegen, steigend angeordnet",
+      "Jedes Antithese-Argument mit Begruendung und Beispiel",
+      "Ueberleitung zwischen den Teilen",
+      "Begruendeter Schluss mit eigener, abgewogener Position"
+    ],
+    "criteria": [
+      {
+        "id": "aufbau",
+        "name": "Aufbau und Gedankenfuehrung",
+        "description": "Klare Gliederung in Einleitung, These, Antithese und Schluss; nachvollziehbare, steigende Anordnung der Argumente.",
+        "maxPoints": 20,
+        "levels": [
+          {
+            "minPoints": 16,
+            "maxPoints": 20,
+            "label": "sehr gut bis gut",
+            "descriptor": "Alle Teile vorhanden, Argumente sinnvoll gesteigert, gedanklicher roter Faden durchgehend."
+          },
+          {
+            "minPoints": 8,
+            "maxPoints": 15,
+            "label": "befriedigend bis ausreichend",
+            "descriptor": "Grundgliederung erkennbar, Steigerung teilweise umgesetzt."
+          },
+          {
+            "minPoints": 0,
+            "maxPoints": 7,
+            "label": "im Aufbau",
+            "descriptor": "Einzelne Teile der Gliederung noch zu ergaenzen."
+          }
+        ]
+      },
+      {
+        "id": "argument-belege",
+        "name": "Argument mit Beleg",
+        "description": "Ein Argument zaehlt nur, wenn Behauptung, Begruendung und Beispiel zusammen vorhanden sind (alles-oder-nichts pro Argument).",
+        "maxPoints": 15,
+        "allOrNothing": {
+          "rule": "Ein Argument zaehlt nur mit Behauptung UND Begruendung UND Beispiel.",
+          "parts": ["Behauptung", "Begruendung", "Beispiel"]
+        }
+      },
+      {
+        "id": "sprachrichtigkeit",
+        "name": "Sprachrichtigkeit",
+        "description": "Grammatik, Rechtschreibung und Zeichensetzung.",
+        "maxPoints": 15,
+        "colorKey": "grammar"
+      },
+      {
+        "id": "stil",
+        "name": "Stil und Ausdruck",
+        "description": "Satzbau, Wortwahl und Kohaesion; sachlich-argumentierender Stil.",
+        "maxPoints": 15,
+        "colorKey": "sentence"
+      }
+    ],
+    "calibrationSamples": [
+      {
+        "id": "sample-de-1",
+        "text": "Ob soziale Netzwerke am Arbeitsplatz erlaubt sein sollten, wird oft diskutiert. Fuer eine Erlaubnis spricht, dass kurze Pausen die Konzentration foerdern koennen. Zum Beispiel berichtet ein Kollege, dass er nach fuenf Minuten am Handy wieder klarer denkt. Ein staerkeres Argument ist, dass sich Teams ueber solche Kanaele schnell absprechen, etwa bei einer kurzfristigen Schichtaenderung. Dagegen laesst sich einwenden, dass die Ablenkung gross sein kann. Wer staendig auf Nachrichten schaut, verliert den Faden, was man an haeufigen Fluechtigkeitsfehlern sieht. Noch schwerer wiegt der Datenschutz, denn betriebliche Informationen koennten unbeabsichtigt geteilt werden. Nach Abwaegung beider Seiten halte ich eine geregelte Nutzung in festen Pausen fuer sinnvoll.",
+        "teacherScores": {
+          "aufbau": 17,
+          "argument-belege": 15,
+          "sprachrichtigkeit": 13,
+          "stil": 12
+        },
+        "note": "Klare Gliederung, Argumente mit Beispiel belegt."
+      },
+      {
+        "id": "sample-de-2",
+        "text": "Soziale Netzwerke am Arbeitsplatz sind ein Streitthema. Manche finden es gut. Man kann sich austauschen. Man kann Pause machen. Andere finden es nicht so gut. Man wird abgelenkt. Der Datenschutz ist ein Problem. Ich denke, man sollte es erlauben.",
+        "teacherScores": {
+          "aufbau": 9,
+          "argument-belege": 0,
+          "sprachrichtigkeit": 10,
+          "stil": 7
+        },
+        "note": "Ansaetze vorhanden, aber keine Beispiele, daher Argument-Beleg 0."
+      }
+    ]
+  },
+  "createdAt": "2026-07-03T00:00:00.000Z",
+  "updatedAt": "2026-07-03T00:00:00.000Z"
+}

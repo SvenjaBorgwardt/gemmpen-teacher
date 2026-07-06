@@ -1,0 +1,139 @@
+{
+  "id": "englisch-comment",
+  "name": "Englisch Comment (rollenbasierte Stellungnahme)",
+  "subject": "Englisch",
+  "textLanguage": "en",
+  "feedbackLanguage": "en",
+  "classLevel": "Berufskolleg, IT-Ausbildung",
+  "level": "B1-B2",
+  "gradingSystem": "nrw-points",
+  "feedbackStyle": {
+    "tone": "warm und klar, ermutigend",
+    "length": "medium",
+    "includePractice": true
+  },
+  "forbiddenWords": [
+    "wrong",
+    "bad",
+    "poor",
+    "fail",
+    "lack",
+    "weak",
+    "missing",
+    "incorrect",
+    "falsch",
+    "schlecht",
+    "mangelhaft",
+    "fehlt"
+  ],
+  "rubric": {
+    "taskPrompt": "Write a comment in the role of an employee representative at NorthStar Logistics AG. Take a clear position on introducing AI tools at the workplace. Follow this structure: introduction, three counter-arguments (strongest to weakest), a bridge, three own arguments (weakest to strongest), and a conclusion. Each argument must contain a claim, a reason, and an example.",
+    "expectedPoints": [
+      "Introduction names the topic and the writer's role and states a clear position",
+      "Counter-argument 1 (strongest) with claim, reason and example",
+      "Counter-argument 2 with claim, reason and example",
+      "Counter-argument 3 (weakest) with claim, reason and example",
+      "Bridge that moves from the counter-arguments to the own position",
+      "Own argument 1 (weakest) with claim, reason and example",
+      "Own argument 2 with claim, reason and example",
+      "Own argument 3 (strongest) with claim, reason and example",
+      "Conclusion that restates the position and gives an outlook"
+    ],
+    "criteria": [
+      {
+        "id": "structure",
+        "name": "Aufbau und Argumentation",
+        "description": "Follows the required structure (intro, three counter-arguments strongest to weakest, bridge, three own arguments weakest to strongest, conclusion) as flowing prose.",
+        "maxPoints": 27,
+        "levels": [
+          {
+            "minPoints": 22,
+            "maxPoints": 27,
+            "label": "sehr gut",
+            "descriptor": "All parts present and ordered as required, arguments developed as connected prose."
+          },
+          {
+            "minPoints": 14,
+            "maxPoints": 21,
+            "label": "gut bis befriedigend",
+            "descriptor": "Most parts present and mostly in order, some arguments carried further than others."
+          },
+          {
+            "minPoints": 0,
+            "maxPoints": 13,
+            "label": "im Aufbau",
+            "descriptor": "Several structural parts still to be added or reordered."
+          }
+        ]
+      },
+      {
+        "id": "cre-argument",
+        "name": "Argument-Vollstaendigkeit (CRE)",
+        "description": "Each of the six arguments is only counted when claim, reason and example are all present. This criterion checks that all-or-nothing rule across arguments.",
+        "maxPoints": 18,
+        "allOrNothing": {
+          "rule": "Ein Argument zaehlt nur mit Claim UND Reason UND Example.",
+          "parts": ["Claim", "Reason", "Example"]
+        }
+      },
+      {
+        "id": "grammar",
+        "name": "Grammatik",
+        "description": "Correctness of structures, tenses, agreement.",
+        "maxPoints": 15,
+        "colorKey": "grammar"
+      },
+      {
+        "id": "sentence",
+        "name": "Satzbau",
+        "description": "Variety, complexity and cohesion of sentences; flowing prose rather than labels.",
+        "maxPoints": 15,
+        "colorKey": "sentence"
+      },
+      {
+        "id": "vocabulary",
+        "name": "Allgemeiner Wortschatz",
+        "description": "Range and precision of everyday vocabulary, own wording.",
+        "maxPoints": 15,
+        "colorKey": "vocabulary"
+      },
+      {
+        "id": "connectives",
+        "name": "Fachwortschatz und Verknuepfungen",
+        "description": "Topic vocabulary about work and technology plus connectives that link arguments.",
+        "maxPoints": 15,
+        "colorKey": "connectives"
+      }
+    ],
+    "calibrationSamples": [
+      {
+        "id": "sample-strong",
+        "text": "As an employee representative at NorthStar Logistics AG, I would like to comment on the plan to introduce AI tools at our workplace. Many colleagues worry about their jobs. They fear that routine tasks will be automated, for example the sorting of delivery notes, which three colleagues do every morning. Another concern is data protection, because the tools collect a lot of information about how we work. A third worry is that people who are not used to computers could be left behind. However, there are also strong reasons in favour of the change. First, the tools can take over tiring repetitive steps, so we have more time for customer calls. Second, they can reduce mistakes in the routing of parcels, which currently cost us extra hours. Most importantly, if we help to shape the rules for these tools, we can protect our colleagues and still profit from the new possibilities. In conclusion, I support a careful introduction with clear rules and training for everyone.",
+        "teacherScores": {
+          "structure": 24,
+          "cre-argument": 18,
+          "grammar": 13,
+          "sentence": 12,
+          "vocabulary": 12,
+          "connectives": 13
+        },
+        "note": "Vollstaendige Struktur, CRE in allen Argumenten erfuellt, sichere Sprache."
+      },
+      {
+        "id": "sample-mid",
+        "text": "I am an employee representative. I want to talk about AI at work. Some colleagues do not like the idea. Jobs could be automated. Data protection is also a topic. And some people are afraid of computers. On the other hand AI can help. It saves time. It can reduce errors. It can make the work easier. In conclusion I think we should try it with rules.",
+        "teacherScores": {
+          "structure": 14,
+          "cre-argument": 0,
+          "grammar": 10,
+          "sentence": 7,
+          "vocabulary": 8,
+          "connectives": 8
+        },
+        "note": "Struktur erkennbar, aber Argumente ohne Beispiele, daher CRE 0."
+      }
+    ]
+  },
+  "createdAt": "2026-07-03T00:00:00.000Z",
+  "updatedAt": "2026-07-03T00:00:00.000Z"
+}
