@@ -1,0 +1,27 @@
+Aufgabenstellung:
+Write a comment in the role of an employee representative at NorthStar Logistics AG. Take a clear position on introducing AI tools at the workplace. Follow this structure: introduction, three counter-arguments (strongest to weakest), a bridge, three own arguments (weakest to strongest), and a conclusion. Each argument must contain a claim, a reason, and an example.
+
+Erwartungshorizont (was eine gute Bearbeitung inhaltlich enthaelt):
+0. Introduction names the topic and the writer's role and states a clear position
+1. Counter-argument 1 (strongest) with claim, reason and example
+2. Counter-argument 2 with claim, reason and example
+3. Counter-argument 3 (weakest) with claim, reason and example
+4. Bridge that moves from the counter-arguments to the own position
+5. Own argument 1 (weakest) with claim, reason and example
+6. Own argument 2 with claim, reason and example
+7. Own argument 3 (strongest) with claim, reason and example
+8. Conclusion that restates the position and gives an outlook
+
+Schlage ein Bewertungsraster vor. Verteile die Punkte sinnvoll auf die Kriterien.
+Antworte als JSON in genau dieser Form:
+{
+  "criteria": [
+    {
+      "id": "kurze-id-in-kleinschreibung",
+      "name": "Anzeigename",
+      "description": "Was dieses Kriterium prueft",
+      "maxPoints": 15,
+      "allOrNothing": { "rule": "Kurzbeschreibung, nur wenn sinnvoll", "parts": ["Teil 1", "Teil 2"] }
+    }
+  ]
+}

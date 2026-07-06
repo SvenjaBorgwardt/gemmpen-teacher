@@ -1,0 +1,118 @@
+{
+  "id": "wirtschaft-fachtext",
+  "name": "Wirtschaft Fachtext (Analyse einer Fallsituation)",
+  "subject": "Wirtschaft",
+  "textLanguage": "de",
+  "feedbackLanguage": "de",
+  "classLevel": "Berufskolleg, kaufmaennische Ausbildung",
+  "level": "B2",
+  "gradingSystem": "percent",
+  "feedbackStyle": {
+    "tone": "warm und praezise",
+    "length": "long",
+    "includePractice": false
+  },
+  "forbiddenWords": [
+    "falsch",
+    "schlecht",
+    "mangelhaft",
+    "fehlt",
+    "wrong",
+    "bad",
+    "poor",
+    "fail",
+    "lack",
+    "weak",
+    "missing",
+    "incorrect"
+  ],
+  "rubric": {
+    "taskPrompt": "Analysiere die Fallsituation eines mittelstaendischen Betriebs, der ueber die Einfuehrung eines neuen Warenwirtschaftssystems entscheidet. Beschreibe die Ausgangslage, arbeite Chancen und Risiken heraus, wende passende betriebswirtschaftliche Fachbegriffe an und formuliere eine begruendete Handlungsempfehlung.",
+    "expectedPoints": [
+      "Ausgangslage des Betriebs korrekt erfasst (Groesse, Branche, Anlass der Entscheidung)",
+      "Mindestens zwei Chancen mit betriebswirtschaftlicher Begruendung",
+      "Mindestens zwei Risiken mit betriebswirtschaftlicher Begruendung",
+      "Passende Fachbegriffe sachgerecht angewendet (z.B. Liquiditaet, Investition, Amortisation, Prozesskosten)",
+      "Bezug zu Kennzahlen oder Zahlen aus dem Fall",
+      "Begruendete Handlungsempfehlung, die Chancen und Risiken abwaegt"
+    ],
+    "criteria": [
+      {
+        "id": "analyse",
+        "name": "Analyse der Fallsituation",
+        "description": "Erfassen der Ausgangslage sowie Herausarbeiten von Chancen und Risiken mit betriebswirtschaftlicher Begruendung.",
+        "maxPoints": 30,
+        "levels": [
+          {
+            "minPoints": 24,
+            "maxPoints": 30,
+            "label": "sehr gut bis gut",
+            "descriptor": "Ausgangslage vollstaendig, Chancen und Risiken differenziert und begruendet."
+          },
+          {
+            "minPoints": 12,
+            "maxPoints": 23,
+            "label": "befriedigend bis ausreichend",
+            "descriptor": "Wesentliche Punkte erfasst, Begruendungen teils knapp."
+          },
+          {
+            "minPoints": 0,
+            "maxPoints": 11,
+            "label": "in Arbeit",
+            "descriptor": "Einzelne Aspekte der Analyse noch zu ergaenzen."
+          }
+        ]
+      },
+      {
+        "id": "fachbegriffe",
+        "name": "Fachbegriffe",
+        "description": "Sachgerechte Anwendung betriebswirtschaftlicher Fachbegriffe im Zusammenhang.",
+        "maxPoints": 20,
+        "colorKey": "connectives"
+      },
+      {
+        "id": "empfehlung",
+        "name": "Handlungsempfehlung mit Begruendung",
+        "description": "Eine Empfehlung zaehlt nur, wenn Entscheidung, Begruendung und Bezug zum Fall zusammen vorhanden sind.",
+        "maxPoints": 20,
+        "allOrNothing": {
+          "rule": "Die Empfehlung zaehlt nur mit Entscheidung UND Begruendung UND Fallbezug.",
+          "parts": ["Entscheidung", "Begruendung", "Fallbezug"]
+        }
+      },
+      {
+        "id": "sprache",
+        "name": "Sprache und Darstellung",
+        "description": "Klarheit, Fachsprache, Satzbau und Nachvollziehbarkeit der Darstellung.",
+        "maxPoints": 15,
+        "colorKey": "sentence"
+      }
+    ],
+    "calibrationSamples": [
+      {
+        "id": "sample-wi-1",
+        "text": "Der Betrieb ist ein mittelstaendischer Grosshaendler mit rund 40 Beschaeftigten, der ueber ein neues Warenwirtschaftssystem entscheidet, weil die Lagerbestaende oft ungenau sind. Eine Chance liegt in geringeren Prozesskosten, da die Erfassung automatisch laeuft und weniger Nacharbeit entsteht. Eine weitere Chance ist eine bessere Liquiditaetsplanung, weil Bestellungen genauer ausgeloest werden und weniger Kapital im Lager gebunden ist. Ein Risiko ist die hohe Anfangsinvestition von 60.000 Euro, die die Liquiditaet zunaechst belastet. Ein zweites Risiko ist die Einarbeitung, die Arbeitszeit bindet, bis sich die Investition amortisiert. Ich empfehle die Einfuehrung, weil die jaehrlichen Einsparungen laut Fall bei 25.000 Euro liegen und sich die Investition damit in etwa zweieinhalb Jahren amortisiert.",
+        "teacherScores": {
+          "analyse": 26,
+          "fachbegriffe": 17,
+          "empfehlung": 20,
+          "sprache": 13
+        },
+        "note": "Vollstaendige Analyse, Fachbegriffe korrekt, Empfehlung mit Fallbezug."
+      },
+      {
+        "id": "sample-wi-2",
+        "text": "Die Firma will ein neues System kaufen. Das kann gut sein, weil es schneller geht. Es kann aber auch teuer sein. Man muss es lernen. Ich glaube, sie sollten es machen.",
+        "teacherScores": {
+          "analyse": 10,
+          "fachbegriffe": 5,
+          "empfehlung": 0,
+          "sprache": 7
+        },
+        "note": "Grundgedanke da, aber ohne Fachbegriffe und ohne Fallbezug in der Empfehlung."
+      }
+    ]
+  },
+  "createdAt": "2026-07-03T00:00:00.000Z",
+  "updatedAt": "2026-07-03T00:00:00.000Z"
+}

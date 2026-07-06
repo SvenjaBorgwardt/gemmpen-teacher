@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gemmpen.local/schema/subject-config.json",
+  "title": "SubjectConfig",
+  "description": "Fachunabhaengige Bewertungs-Konfiguration fuer gemmpen-teacher. Eine Datei je Fach in data/config/. Spiegelt lib/types.ts (SubjectConfig).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "subject",
+    "textLanguage",
+    "feedbackLanguage",
+    "classLevel",
+    "level",
+    "gradingSystem",
+    "feedbackStyle",
+    "forbiddenWords",
+    "rubric",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stabile ID, zugleich Dateiname ohne Endung.",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "minLength": 1
+    },
+    "name": { "type": "string", "minLength": 1, "description": "Anzeigename." },
+    "subject": { "type": "string", "minLength": 1, "description": "Fach, z.B. Englisch." },
+    "textLanguage": { "type": "string", "minLength": 2, "description": "Sprache der Schuelertexte (ISO-Code)." },
+    "feedbackLanguage": { "type": "string", "minLength": 2, "description": "Sprache des erzeugten Feedbacks (ISO-Code)." },
+    "classLevel": { "type": "string", "description": "Klassenstufe, frei." },
+    "level": { "type": "string", "description": "Niveau, z.B. B1-B2." },
+    "gradingSystem": {
+      "type": "string",
+      "enum": ["nrw-points", "grades-1-6", "percent"],
+      "description": "Notensystem der Gesamtnote."
+    },
+    "feedbackStyle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tone", "length", "includePractice"],
+      "properties": {
+        "tone": { "type": "string", "minLength": 1, "description": "Ton, z.B. warm und klar." },
+        "length": { "type": "string", "enum": ["short", "medium", "long"] },
+        "includePractice": { "type": "boolean" }
+      }
+    },
+    "forbiddenWords": {
+      "type": "array",
+      "description": "Woerter, die im schuelergerichteten Text nicht vorkommen duerfen (Hausregel 2).",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "rubric": { "$ref": "#/definitions/Rubric" },
+    "createdAt": { "type": "string", "description": "ISO-8601 Zeitstempel." },
+    "updatedAt": { "type": "string", "description": "ISO-8601 Zeitstempel." }
+  },
+  "definitions": {
+    "Rubric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["taskPrompt", "expectedPoints", "criteria", "calibrationSamples"],
+      "properties": {
+        "taskPrompt": { "type": "string", "minLength": 1, "description": "Aufgabenstellung im Klartext." },
+        "expectedPoints": {
+          "type": "array",
+          "description": "Erwartungshorizont als Liste erwarteter inhaltlicher Punkte.",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/Criterion" }
+        },
+        "calibrationSamples": {
+          "type": "array",
+          "description": "Bewertete Beispielarbeiten fuer die Kalibrierung.",
+          "items": { "$ref": "#/definitions/CalibrationSample" }
+        }
+      }
+    },
+    "Criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "description", "maxPoints"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "description": "Stabile ID." },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "maxPoints": { "type": "number", "exclusiveMinimum": 0 },
+        "levels": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/CriterionLevel" }
+        },
+        "allOrNothing": {
+          "type": "object",
+          "description": "Alles-oder-Nichts-Sonderregel (z.B. Claim + Reason + Example).",
+          "additionalProperties": false,
+          "required": ["rule", "parts"],
+          "properties": {
+            "rule": { "type": "string", "minLength": 1 },
+            "parts": {
+              "type": "array",
+              "items": { "type": "string", "minLength": 1 },
+              "minItems": 2
+            }
+          }
+        },
+        "colorKey": {
+          "type": "string",
+          "enum": ["grammar", "sentence", "vocabulary", "connectives"]
+        }
+      }
+    },
+    "CriterionLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minPoints", "maxPoints", "label", "descriptor"],
+      "properties": {
+        "minPoints": { "type": "number", "minimum": 0 },
+        "maxPoints": { "type": "number", "minimum": 0 },
+        "label": { "type": "string", "minLength": 1 },
+        "descriptor": { "type": "string", "minLength": 1 }
+      }
+    },
+    "CalibrationSample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text", "teacherScores"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "text": { "type": "string", "minLength": 1 },
+        "teacherScores": {
+          "type": "object",
+          "description": "criterionId -> vergebene Punkte.",
+          "additionalProperties": { "type": "number" }
+        },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}
