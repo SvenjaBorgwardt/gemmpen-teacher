@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { LocaleProvider } from "@/lib/i18n";
 
 const cormorant = Cormorant_Garamond({
@@ -32,6 +33,7 @@ export default function RootLayout({
         <LocaleProvider>
           <Nav />
           <main className="flex-1 w-full max-w-5xl mx-auto px-6 py-10">{children}</main>
+          <Footer />
         </LocaleProvider>
       </body>
     </html>

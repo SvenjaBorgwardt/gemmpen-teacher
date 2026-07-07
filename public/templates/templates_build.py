@@ -78,6 +78,18 @@ def mmv(v):
     return v * mm
 
 
+def set_pdf_metadata(c, title):
+    """
+    Setzt sprechende Dokument-Metadaten. Ohne diese Angaben schreibt reportlab
+    die Defaults 'untitled' / 'anonymous' in die PDF, die viele Viewer und der
+    Browser-Download dann als Dateiname bzw. Dokumenttitel anzeigen.
+    """
+    c.setTitle(title)
+    c.setAuthor("GemmPen Teacher")
+    c.setCreator("GemmPen Teacher")
+    c.setSubject("Druckvorlage fuer handschriftliche Klassenarbeiten")
+
+
 # ---------------------------------------------------------------------------
 # MARKER ZEICHNEN
 # ---------------------------------------------------------------------------
@@ -286,6 +298,11 @@ def build_vorlage(filename, mode):
     c = canvas.Canvas(filename, pagesize=A4)
     page_h_mm = PAGE_H / mm
 
+    if mode == "linien":
+        set_pdf_metadata(c, "GemmPen Schreibvorlage mit Linien")
+    elif mode == "kaestchen":
+        set_pdf_metadata(c, "GemmPen Schreibvorlage mit Kaestchen")
+
     draw_all_markers(c)
     header_bottom_mm = draw_header(c)
 
@@ -313,6 +330,7 @@ def build_vorlage(filename, mode):
 # ---------------------------------------------------------------------------
 def build_scan_anleitung(filename):
     c = canvas.Canvas(filename, pagesize=A4)
+    set_pdf_metadata(c, "GemmPen Scan-Anleitung")
     page_w_mm = PAGE_W / mm
     page_h_mm = PAGE_H / mm
 

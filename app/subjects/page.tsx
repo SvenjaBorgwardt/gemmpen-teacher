@@ -95,13 +95,25 @@ export default function SubjectsPage() {
         <p className="font-serif text-xl text-ink mb-1">{t("templates.title")}</p>
         <p className="text-ink-soft text-[15px] mb-3">{t("templates.hint")}</p>
         <div className="flex flex-wrap gap-3">
-          <a href="/templates/vorlage-linien.pdf" download className="gp-button-ghost">
+          <a
+            href="/templates/vorlage-linien.pdf"
+            download={`${t("templates.lined")}.pdf`}
+            className="gp-button-ghost"
+          >
             {t("templates.lined")}
           </a>
-          <a href="/templates/vorlage-kaestchen.pdf" download className="gp-button-ghost">
+          <a
+            href="/templates/vorlage-kaestchen.pdf"
+            download={`${t("templates.squared")}.pdf`}
+            className="gp-button-ghost"
+          >
             {t("templates.squared")}
           </a>
-          <a href="/templates/scan-anleitung.pdf" download className="gp-button-ghost">
+          <a
+            href="/templates/scan-anleitung.pdf"
+            download={`${t("templates.guide")}.pdf`}
+            className="gp-button-ghost"
+          >
             {t("templates.guide")}
           </a>
         </div>

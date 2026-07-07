@@ -418,5 +418,26 @@
   "ollama.error.invalidInput": "Dieser Aufruf konnte nicht gestellt werden. Bitte die Einstellungen pruefen.",
 
   "recognize.error.imageMissing": "Zu dieser Seite wurde kein Bild gefunden. Bitte die Seite erneut hochladen.",
-  "recognize.error.unknown": "Beim Lesen dieser Arbeit ist etwas schiefgegangen. Bitte noch einmal versuchen."
+  "recognize.error.unknown": "Beim Lesen dieser Arbeit ist etwas schiefgegangen. Bitte noch einmal versuchen.",
+
+  "footer.local": "Alles bleibt auf deinem Rechner.",
+  "footer.disclaimer": "Vorschlaege der App bitte immer selbst pruefen. Sie ersetzen nicht deine eigene Bewertung.",
+  "footer.legal": "Rechtliches und Datenschutz",
+
+  "legal.title": "Rechtliches",
+  "legal.intro": "GemmPen Teacher laeuft vollstaendig auf deinem Rechner. Diese Seite fasst das Wichtigste zu Verantwortung, Datenschutz und Haftung zusammen.",
+  "legal.responsibility.title": "Wer ist verantwortlich",
+  "legal.responsibility.p1": "Verantwortlicher im Sinne der DSGVO fuer die verarbeiteten Schuelerdaten bist du als nutzende Lehrkraft, beziehungsweise deine Schule. Du entscheidest, welche Arbeiten du einliest und wie lange du die Daten behaeltst.",
+  "legal.responsibility.p2": "Die Entwicklerin der App ist weder Verantwortliche noch Auftragsverarbeiterin. Die App sendet nichts ins Internet, es gibt keinen Server der Entwicklerin und keinen Fernzugriff. Die Entwicklerin bekommt zu keinem Zeitpunkt Daten zu sehen.",
+  "legal.responsibility.p3": "Stimme den Einsatz mit echten Schuelerdaten vorab mit der Datenschutzbeauftragten deiner Schule ab, besonders auf privaten Geraeten.",
+  "legal.privacy.title": "Datenschutz",
+  "legal.privacy.p1": "Alle Daten bleiben in einem Ordner namens data auf deinem Rechner. Nichts wird hochgeladen. Schuetze deinen Rechner, nutze Kuerzel statt Namen und loesche die Daten, wenn du sie nicht mehr brauchst.",
+  "legal.disclaimer.title": "Keine Gewaehr, kein Ersatz fuer deine Bewertung",
+  "legal.disclaimer.p1": "Die App liest Handschrift und macht mit einem KI-Modell Vorschlaege fuer Bewertung und Feedback. Diese koennen falsch oder unvollstaendig sein. Pruefe erkannten Text, Punkte, Begruendungen und Feedback immer selbst.",
+  "legal.disclaimer.p2": "Die Ergebnisse sind Entwuerfe und ein Hilfsmittel. Die Verantwortung fuer Noten und Feedback traegt allein die bewertende Lehrkraft. Nutze die Ausgaben nicht als alleinige Grundlage fuer rechtlich bedeutsame Entscheidungen.",
+  "legal.disclaimer.p3": "Die Software wird ohne Gewaehr bereitgestellt. Soweit gesetzlich zulaessig ist die Haftung der Entwicklerin ausgeschlossen. Die Haftung fuer Vorsatz, grobe Fahrlaessigkeit und Schaeden an Leben, Koerper oder Gesundheit bleibt unberuehrt.",
+  "legal.imprint.title": "Impressum",
+  "legal.imprint.p1": "Fuer die lokal auf deinem Rechner laufende App ist kein Impressum noetig, da sie keine oeffentliche Website ist. Wer eine oeffentlich erreichbare Seite dazu bereitstellt, ergaenzt dort ein Impressum nach den geltenden Vorgaben.",
+  "legal.notAdvice": "Diese Seite ist keine Rechtsberatung. Fuer den konkreten Einsatz kann eine eigene rechtliche und datenschutzrechtliche Pruefung noetig sein.",
+  "legal.moreInProject": "Ausfuehrliche Fassungen liegen im Projektordner: Datenschutz-Leitfaden (DATENSCHUTZ.md) und Haftungsausschluss (HAFTUNGSAUSSCHLUSS.md)."
 }
