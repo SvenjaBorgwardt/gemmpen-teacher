@@ -5,7 +5,7 @@
 
   - Zwei Locale-Dateien: locales/de.json, locales/en.json.
   - Alle UI-Strings kommen ausschliesslich daraus (Hausregel 8).
-  - Standardsprache Deutsch, Umschalter in der Navigation.
+  - Standardsprache Englisch (Public-Release), Umschalter in der Navigation.
   - Die Wahl wird in localStorage gemerkt (Schluessel gemmpen.locale).
 
   Die Sprache wird als externer Speicher (localStorage) ueber useSyncExternalStore
@@ -33,7 +33,7 @@ const DICTS: Record<UiLocale, Messages> = {
 };
 
 const STORAGE_KEY = "gemmpen.locale";
-const DEFAULT_LOCALE: UiLocale = "de";
+const DEFAULT_LOCALE: UiLocale = "en";
 
 /* ---- Externer Sprachspeicher (localStorage + Ereignisse) ---- */
 
@@ -58,7 +58,7 @@ function subscribe(callback: () => void): () => void {
 
 function getSnapshot(): UiLocale {
   const stored = window.localStorage.getItem(STORAGE_KEY);
-  return stored === "en" ? "en" : "de";
+  return stored === "de" ? "de" : "en";
 }
 
 // Auf dem Server gibt es kein localStorage: immer Standardsprache.

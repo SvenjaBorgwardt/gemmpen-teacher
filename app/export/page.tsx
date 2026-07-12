@@ -195,7 +195,7 @@ function ExportOverview() {
     setErrorText(null);
     const messageKey = await downloadFile(
       `/api/export/class-pdf?round=${encodeURIComponent(roundId)}`,
-      `klassenuebersicht-${roundId}.pdf`,
+      `class-overview-${roundId}.pdf`,
     );
     if (messageKey) setErrorText(t("export.error.download"));
     setDownloadingClass(false);

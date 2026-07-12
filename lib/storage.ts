@@ -101,6 +101,34 @@ export async function readConfig(id: string): Promise<SubjectConfig | null> {
   return readJson<SubjectConfig>(path.join(configDir(), `${safeId(id)}.json`));
 }
 
+/** Ordner mit mitgelieferten Beispiel-Konfigurationen (Startvorlagen, im Repo). */
+function exampleConfigDir(): string {
+  return path.join(configDir(), "beispiele");
+}
+
+/**
+ * Liest die mitgelieferten Beispiel-Konfigurationen aus data/config/beispiele/.
+ * Diese read-only Startvorlagen dienen als Ausgangspunkt beim Einrichten und
+ * liegen getrennt von den gespeicherten Faechern der Lehrkraft (data/config).
+ * Fehlt der Ordner, wird eine leere Liste zurueckgegeben (Beispiele sind optional).
+ */
+export async function listExampleConfigs(): Promise<SubjectConfig[]> {
+  let files: string[];
+  try {
+    files = await fs.readdir(exampleConfigDir());
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === "ENOENT") return [];
+    throw err;
+  }
+  const configs: SubjectConfig[] = [];
+  for (const f of files) {
+    if (!f.endsWith(".json")) continue;
+    const cfg = await readJson<SubjectConfig>(path.join(exampleConfigDir(), f));
+    if (cfg) configs.push(cfg);
+  }
+  return configs.sort((a, b) => a.name.localeCompare(b.name));
+}
+
 export async function writeConfig(config: SubjectConfig): Promise<void> {
   await writeJson(path.join(configDir(), `${safeId(config.id)}.json`), config);
 }

@@ -63,7 +63,7 @@ export async function GET(req: Request) {
     status: 200,
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="klassenuebersicht-${roundId}.pdf"`,
+      "Content-Disposition": `attachment; filename="class-overview-${roundId}.pdf"`,
       "Cache-Control": "no-store",
     },
   });

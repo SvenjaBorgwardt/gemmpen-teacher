@@ -506,16 +506,10 @@ function Step3({
     let cancelled = false;
     async function loadExamples() {
       try {
-        const ids = ["englisch-comment", "deutsch-eroerterung", "wirtschaft-fachtext"];
-        const results = await Promise.all(
-          ids.map(async (id) => {
-            const res = await fetch(`/api/setup/configs/${id}`);
-            if (!res.ok) return null;
-            const data = (await res.json()) as { config: SubjectConfig };
-            return data.config;
-          }),
-        );
-        if (!cancelled) setExamples(results.filter((c): c is SubjectConfig => c !== null));
+        const res = await fetch("/api/setup/examples");
+        if (!res.ok) return;
+        const data = (await res.json()) as { examples: SubjectConfig[] };
+        if (!cancelled) setExamples(data.examples);
       } catch {
         // Beispiele sind optional; ohne sie funktioniert der Schritt weiter.
       }

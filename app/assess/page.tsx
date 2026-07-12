@@ -86,6 +86,7 @@ function AssessOverview() {
     null,
   );
   const [runErrors, setRunErrors] = useState<string[]>([]);
+  const [runPlaceholder, setRunPlaceholder] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -182,6 +183,7 @@ function AssessOverview() {
       setRunState("running");
       setRunErrors([]);
       setRunProgress(null);
+      setRunPlaceholder(false);
       try {
         const res = await fetch("/api/assess/run", {
           method: "POST",
@@ -196,9 +198,11 @@ function AssessOverview() {
         const data = (await res.json()) as {
           total: number;
           processed: number;
+          usingRealClient?: boolean;
           results: Array<{ submissionId: string; status: string; errorMessageKey?: string }>;
         };
         setRunProgress({ processed: data.processed, total: data.total });
+        setRunPlaceholder(data.usingRealClient === false && data.processed > 0);
         const errors = data.results
           .filter((r) => r.status === "error")
           .map((r) => `${r.submissionId}: ${r.errorMessageKey ? t(r.errorMessageKey) : t("assess.run.error")}`);
@@ -318,6 +322,11 @@ function AssessOverview() {
             {runState === "done" && runProgress && (
               <p className="text-ink-soft text-sm mt-2">
                 {t("assess.run.done").replace("{{count}}", String(runProgress.processed))}
+              </p>
+            )}
+            {runState === "done" && runPlaceholder && (
+              <p className="mt-2 rounded-md border border-amber-soft bg-amber-soft/60 px-3 py-2 text-sm text-ink-soft">
+                {t("assess.run.placeholder")}
               </p>
             )}
             {runErrors.length > 0 && (

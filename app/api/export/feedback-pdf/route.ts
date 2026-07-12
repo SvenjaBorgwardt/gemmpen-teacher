@@ -61,7 +61,12 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "Kein Feedback-Entwurf gefunden." }, { status: 404 });
   }
 
-  const grade = calculateGrade(config.gradingSystem, assessment.totalPoints, assessment.maxPoints);
+  const grade = calculateGrade(
+    config.gradingSystem,
+    assessment.totalPoints,
+    assessment.maxPoints,
+    config.feedbackLanguage,
+  );
 
   const bytes = await buildFeedbackPdf({
     submission,

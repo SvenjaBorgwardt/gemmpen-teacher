@@ -1,6 +1,9 @@
 /*
   Notenberechnung (AP7, lib/grading/grade.ts) in allen drei Notensystemen.
   Reine Funktionstests, kein Dateizugriff noetig.
+
+  Standard-Labelsprache ist Englisch (Public-Release). Bei feedbackLanguage
+  "de..." werden die deutschen Schulbegriffe zurueckgegeben.
 */
 
 import { test } from "node:test";
@@ -8,53 +11,65 @@ import assert from "node:assert/strict";
 
 import { calculateGrade, sumPoints } from "../grading/grade";
 
-test("NRW-Notenpunkte: volle Punkte ergeben 15/15 und sehr gut", () => {
+test("NRW-Notenpunkte: volle Punkte ergeben 15/15 und very good", () => {
   const g = calculateGrade("nrw-points", 42, 42);
   assert.equal(g.display, "15 / 15");
-  assert.equal(g.label, "sehr gut");
+  assert.equal(g.label, "very good");
   assert.equal(g.ratio, 1);
 });
 
 test("NRW-Notenpunkte: die Haelfte der Punkte ergibt eine mittlere Einordnung", () => {
   const g = calculateGrade("nrw-points", 21, 42);
   assert.equal(g.display, "7.5 / 15");
-  assert.equal(g.label, "befriedigend");
+  assert.equal(g.label, "satisfactory");
 });
 
-test("NRW-Notenpunkte: null Punkte ergeben ungenuegend", () => {
+test("NRW-Notenpunkte: null Punkte ergeben insufficient", () => {
   const g = calculateGrade("nrw-points", 0, 42);
   assert.equal(g.display, "0 / 15");
-  assert.equal(g.label, "ungenuegend");
+  assert.equal(g.label, "insufficient");
 });
 
 test("Schulnoten 1-6: volle Punkte ergeben Note 1", () => {
   const g = calculateGrade("grades-1-6", 30, 30);
   assert.equal(g.display, "1,0");
-  assert.equal(g.label, "sehr gut");
+  assert.equal(g.label, "very good");
 });
 
 test("Schulnoten 1-6: null Punkte ergeben Note 6", () => {
   const g = calculateGrade("grades-1-6", 0, 30);
   assert.equal(g.display, "6,0");
-  assert.equal(g.label, "ungenuegend");
+  assert.equal(g.label, "insufficient");
 });
 
 test("Schulnoten 1-6: 80 Prozent liegen im guten Bereich", () => {
   const g = calculateGrade("grades-1-6", 24, 30);
   // 80% -> Note 2,0
   assert.equal(g.display, "2,0");
-  assert.equal(g.label, "gut");
+  assert.equal(g.label, "good");
 });
 
 test("Prozent: volle Punkte ergeben 100 Prozent", () => {
   const g = calculateGrade("percent", 20, 20);
   assert.equal(g.display, "100 %");
-  assert.equal(g.label, "sehr gut");
+  assert.equal(g.label, "very good");
 });
 
 test("Prozent: die Haelfte der Punkte ergibt 50 Prozent", () => {
   const g = calculateGrade("percent", 10, 20);
   assert.equal(g.display, "50 %");
+});
+
+test("Feedback-Sprache Deutsch liefert die deutschen Schulbegriffe", () => {
+  assert.equal(calculateGrade("nrw-points", 42, 42, "de").label, "sehr gut");
+  assert.equal(calculateGrade("nrw-points", 21, 42, "de").label, "befriedigend");
+  assert.equal(calculateGrade("nrw-points", 0, 42, "de").label, "ungenuegend");
+  assert.equal(calculateGrade("grades-1-6", 24, 30, "de").label, "gut");
+});
+
+test("Feedback-Sprache Englisch (explizit) liefert englische Begriffe", () => {
+  assert.equal(calculateGrade("nrw-points", 42, 42, "en").label, "very good");
+  assert.equal(calculateGrade("percent", 10, 20, "en").display, "50 %");
 });
 
 test("Notenberechnung reagiert auf jede Punktaenderung (dasselbe Maximum, andere Punkte)", () => {

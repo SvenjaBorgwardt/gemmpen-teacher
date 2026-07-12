@@ -111,9 +111,10 @@ function AssessDetail() {
     [config],
   );
   const gradingSystem: GradingSystem = config?.gradingSystem ?? "nrw-points";
+  const feedbackLanguage = config?.feedbackLanguage ?? "en";
   const grade = useMemo(
-    () => calculateGrade(gradingSystem, totalPoints, maxPoints),
-    [gradingSystem, totalPoints, maxPoints],
+    () => calculateGrade(gradingSystem, totalPoints, maxPoints, feedbackLanguage),
+    [gradingSystem, totalPoints, maxPoints, feedbackLanguage],
   );
 
   const updateCriterionPoints = useCallback(

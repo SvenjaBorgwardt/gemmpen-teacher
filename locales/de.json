@@ -296,6 +296,7 @@
   "assess.run.running": "Die Bewertung laeuft...",
   "assess.run.inProgress": "Bitte warten, das kann bei vielen Arbeiten einige Minuten dauern.",
   "assess.run.done": "Fertig. {{count}} Arbeiten wurden bewertet.",
+  "assess.run.placeholder": "Die Auswertung war nicht erreichbar. Es stehen vorerst Beispielbewertungen, damit du den Ablauf ansehen kannst. Starte die Auswertung und bewerte die Arbeiten dann noch einmal, um die echten Bewertungen zu erhalten.",
   "assess.run.needsConfig": "Bitte zuerst eine Fach-Konfiguration fuer diese Runde waehlen.",
   "assess.run.error": "Die Bewertung konnte nicht gestartet werden. Bitte noch einmal versuchen.",
 

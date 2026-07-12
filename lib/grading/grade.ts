@@ -35,34 +35,53 @@ function clampRatio(totalPoints: number, maxPoints: number): number {
   return Math.min(1, Math.max(0, r));
 }
 
-/** NRW-Notenpunkte-Stufen mit Klartext-Label (15 bis 0). */
-function nrwLabel(points: number): string {
-  if (points >= 13) return "sehr gut";
-  if (points >= 10) return "gut";
-  if (points >= 7) return "befriedigend";
-  if (points >= 4) return "ausreichend";
-  if (points >= 1) return "mangelhaft";
-  return "ungenuegend";
+/*
+  Klartext-Einordnung je Notenstufe, lokalisiert nach der Feedback-Sprache des
+  Fachs (nicht der App-UI). Reihenfolge: beste Stufe zuerst (Index 0) bis
+  schlechteste (Index 5). Englisch ist Standard (Public-Release); nur bei
+  feedbackLanguage "de..." werden die deutschen Schulbegriffe genutzt.
+
+  Die englischen Begriffe sind bewusst ohne Verbotswoerter (Hausregel 2)
+  gewaehlt, weil dieses Label ungefiltert ins Feedback-PDF geschrieben wird.
+*/
+const BAND_LABELS = {
+  en: ["very good", "good", "satisfactory", "sufficient", "deficient", "insufficient"],
+  de: ["sehr gut", "gut", "befriedigend", "ausreichend", "mangelhaft", "ungenuegend"],
+} as const;
+
+function bandLabel(band: number, feedbackLanguage: string): string {
+  const key = feedbackLanguage.trim().toLowerCase().startsWith("de") ? "de" : "en";
+  return BAND_LABELS[key][band] ?? "";
 }
 
-/** Deutsche Schulnote (1-6) mit Klartext-Label. */
-function gradeLabel(grade: number): string {
-  if (grade <= 1.5) return "sehr gut";
-  if (grade <= 2.5) return "gut";
-  if (grade <= 3.5) return "befriedigend";
-  if (grade <= 4.5) return "ausreichend";
-  if (grade <= 5.5) return "mangelhaft";
-  return "ungenuegend";
+/** NRW-Notenpunkte-Stufe (15 bis 0) als Band-Index (0 = beste). */
+function nrwBand(points: number): number {
+  if (points >= 13) return 0;
+  if (points >= 10) return 1;
+  if (points >= 7) return 2;
+  if (points >= 4) return 3;
+  if (points >= 1) return 4;
+  return 5;
 }
 
-/** Prozent-Einordnung mit Klartext-Label (angelehnt an die anderen Systeme). */
-function percentLabel(percent: number): string {
-  if (percent >= 87) return "sehr gut";
-  if (percent >= 73) return "gut";
-  if (percent >= 60) return "befriedigend";
-  if (percent >= 47) return "ausreichend";
-  if (percent >= 20) return "mangelhaft";
-  return "ungenuegend";
+/** Deutsche Schulnote (1-6) als Band-Index (0 = beste). */
+function gradeBand(grade: number): number {
+  if (grade <= 1.5) return 0;
+  if (grade <= 2.5) return 1;
+  if (grade <= 3.5) return 2;
+  if (grade <= 4.5) return 3;
+  if (grade <= 5.5) return 4;
+  return 5;
+}
+
+/** Prozent-Einordnung als Band-Index (0 = beste), angelehnt an die anderen Systeme. */
+function percentBand(percent: number): number {
+  if (percent >= 87) return 0;
+  if (percent >= 73) return 1;
+  if (percent >= 60) return 2;
+  if (percent >= 47) return 3;
+  if (percent >= 20) return 4;
+  return 5;
 }
 
 /**
@@ -74,6 +93,7 @@ export function calculateGrade(
   system: GradingSystem,
   totalPoints: number,
   maxPoints: number,
+  feedbackLanguage: string = "en",
 ): GradeResult {
   const ratio = clampRatio(totalPoints, maxPoints);
 
@@ -85,7 +105,7 @@ export function calculateGrade(
       maxPoints,
       ratio,
       display: `${roundedDisplay(scaled)} / 15`,
-      label: nrwLabel(scaled),
+      label: bandLabel(nrwBand(scaled), feedbackLanguage),
     };
   }
 
@@ -98,7 +118,7 @@ export function calculateGrade(
       maxPoints,
       ratio,
       display: germanGradeDisplay(grade),
-      label: gradeLabel(grade),
+      label: bandLabel(gradeBand(grade), feedbackLanguage),
     };
   }
 
@@ -110,7 +130,7 @@ export function calculateGrade(
     maxPoints,
     ratio,
     display: `${roundedDisplay(percent)} %`,
-    label: percentLabel(percent),
+    label: bandLabel(percentBand(percent), feedbackLanguage),
   };
 }
 

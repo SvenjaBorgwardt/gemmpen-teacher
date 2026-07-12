@@ -296,6 +296,7 @@
   "assess.run.running": "Assessment is running...",
   "assess.run.inProgress": "Please wait, this can take a few minutes for a larger batch.",
   "assess.run.done": "Done. {{count}} papers were assessed.",
+  "assess.run.placeholder": "The assessment service was not reachable. For now these are sample marks so you can see the flow. Start the service and run the assessment again to get the real marks.",
   "assess.run.needsConfig": "Please choose a subject configuration for this batch first.",
   "assess.run.error": "Assessment could not be started. Please try again.",
 

@@ -37,7 +37,7 @@ export async function GET(req: Request) {
     status: 200,
     headers: {
       "Content-Type": "application/jsonl; charset=utf-8",
-      "Content-Disposition": `attachment; filename="korrekturen-${roundId}.jsonl"`,
+      "Content-Disposition": `attachment; filename="corrections-${roundId}.jsonl"`,
       "Cache-Control": "no-store",
     },
   });
