@@ -784,7 +784,7 @@ function Step3({
 
                 <button
                   type="button"
-                  className="text-[15px] text-cat-grammar font-semibold hover:underline"
+                  className="text-[15px] text-alert font-semibold hover:underline"
                   onClick={() => removeCriterion(c.localKey)}
                 >
                   {t("setup.step3.criteria.remove")}
@@ -1056,7 +1056,7 @@ function Step5({
           )}
           <button
             type="button"
-            className="text-[15px] text-cat-grammar font-semibold hover:underline"
+            className="text-[15px] text-alert font-semibold hover:underline"
             onClick={() => removeSample(s.localKey)}
           >
             {t("setup.step5.sample.remove")}
@@ -1268,7 +1268,7 @@ function Step6({
       </div>
 
       {saveError && (
-        <div className="gp-card p-6 border-cat-grammar">
+        <div className="gp-card p-6 border-alert">
           <p className="text-alert font-semibold mb-2">{t("setup.step6.error.title")}</p>
           <ul className="list-disc pl-5 text-alert text-[15px]">
             {saveError.map((e, i) => (

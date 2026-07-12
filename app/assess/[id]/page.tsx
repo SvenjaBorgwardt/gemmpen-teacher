@@ -23,6 +23,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
 import { calculateGrade } from "@/lib/grading/grade";
+import { ScoreObject } from "@/components/score-object";
 import type {
   Assessment,
   CriterionAssessment,
@@ -115,6 +116,20 @@ function AssessDetail() {
   const grade = useMemo(
     () => calculateGrade(gradingSystem, totalPoints, maxPoints, feedbackLanguage),
     [gradingSystem, totalPoints, maxPoints, feedbackLanguage],
+  );
+  const scoreSegments = useMemo(
+    () =>
+      criteria.map((c) => {
+        const cr = criteriaById.get(c.criterionId);
+        return {
+          key: c.criterionId,
+          name: cr?.name ?? c.criterionId,
+          points: c.points,
+          maxPoints: cr?.maxPoints ?? 0,
+          colorKey: cr?.colorKey ?? null,
+        };
+      }),
+    [criteria, criteriaById],
   );
 
   const updateCriterionPoints = useCallback(
@@ -245,16 +260,15 @@ function AssessDetail() {
         </Link>
       </div>
 
-      {/* Gesamtuebersicht, reaktiv */}
+      {/* Gesamtuebersicht als reaktives Score-Objekt (Signatur) */}
       <div className="gp-card p-5 mb-6">
-        <p className="font-serif text-xl text-ink mb-2">{t("assess.detail.summary.title")}</p>
-        <div className="flex flex-wrap items-baseline gap-4">
-          <span className="font-serif text-4xl text-amber-strong">{grade.display}</span>
-          <span className="text-ink-soft text-[15px] capitalize">{grade.label}</span>
-          <span className="text-ink-soft text-[15px]">
-            {totalPoints} / {maxPoints} {t("assess.detail.summary.points")}
-          </span>
-        </div>
+        <p className="font-serif text-xl text-ink mb-3">{t("assess.detail.summary.title")}</p>
+        <ScoreObject
+          display={grade.display}
+          label={grade.label}
+          caption={`${totalPoints} / ${maxPoints} ${t("assess.detail.summary.points")}`}
+          segments={scoreSegments}
+        />
       </div>
 
       {/* Kriterien-Karten */}

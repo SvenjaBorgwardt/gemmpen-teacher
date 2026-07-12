@@ -160,7 +160,7 @@ export default function SubjectsPage() {
                 </button>
                 <button
                   type="button"
-                  className="text-[15px] text-cat-grammar font-semibold hover:underline"
+                  className="text-[15px] text-alert font-semibold hover:underline"
                   onClick={() => setConfirmDeleteId(config.id)}
                 >
                   {t("subjects.card.delete")}
@@ -168,7 +168,7 @@ export default function SubjectsPage() {
               </div>
 
               {confirmDeleteId === config.id && (
-                <div className="rounded-md border border-cat-grammar bg-paper p-4 space-y-2">
+                <div className="rounded-md border border-alert bg-paper p-4 space-y-2">
                   <p className="text-ink font-semibold">
                     {t("subjects.card.delete.confirmTitle")}
                   </p>

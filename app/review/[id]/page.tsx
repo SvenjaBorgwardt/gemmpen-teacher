@@ -418,40 +418,45 @@ function LineEditor({
         (focused ? "border-amber-strong bg-amber-soft/30" : "border-line")
       }
     >
-      {/* Vorschau mit gelb hinterlegten unsicheren Woertern, per Klick fokussierbar */}
-      <button
-        type="button"
-        onClick={onFocus}
-        className="block w-full text-left text-[15px] leading-relaxed mb-1"
-      >
-        {segments.map((seg) =>
-          seg.kind === "unclear" ? (
-            <mark
-              key={seg.key}
-              className="bg-amber-soft text-amber-strong px-0.5 rounded-sm font-semibold"
-            >
-              {seg.text || "?"}
-            </mark>
-          ) : (
-            <span key={seg.key}>{seg.text}</span>
-          ),
-        )}
-        {line.text.trim() === "" && (
-          <span className="text-ink-soft italic">{t("review.detail.emptyLine")}</span>
-        )}
-      </button>
-
-      {/* Editierbares Feld */}
-      <input
-        type="text"
-        value={line.text}
-        onFocus={onFocus}
-        onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded border border-line bg-paper-raised px-2 py-1 text-ink text-[15px]"
-      />
-      {lineHasUnclear && (
-        <LineUnclearHint />
+      {/*
+        Klick zum Bearbeiten: im Ruhezustand die Vorschau mit gelb hinterlegten
+        unsicheren Woertern; bei Fokus genau ein editierbares Feld (kein
+        doppelter Text mehr). Das Feld ist gegenueber der Karte eingesenkt
+        (bg-paper), damit es als Eingabe erkennbar ist.
+      */}
+      {focused ? (
+        <input
+          type="text"
+          value={line.text}
+          autoFocus
+          onFocus={onFocus}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full rounded border border-amber-strong bg-paper px-2 py-1 text-ink text-[15px]"
+        />
+      ) : (
+        <button
+          type="button"
+          onClick={onFocus}
+          className="block w-full text-left text-[15px] leading-relaxed"
+        >
+          {segments.map((seg) =>
+            seg.kind === "unclear" ? (
+              <mark
+                key={seg.key}
+                className="bg-amber-soft text-amber-strong px-0.5 rounded-sm font-semibold"
+              >
+                {seg.text || "?"}
+              </mark>
+            ) : (
+              <span key={seg.key}>{seg.text}</span>
+            ),
+          )}
+          {line.text.trim() === "" && (
+            <span className="text-ink-soft italic">{t("review.detail.emptyLine")}</span>
+          )}
+        </button>
       )}
+      {lineHasUnclear && <LineUnclearHint />}
     </li>
   );
 }

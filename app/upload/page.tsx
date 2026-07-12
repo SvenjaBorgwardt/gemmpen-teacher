@@ -334,7 +334,7 @@ function FileStageIcon({ stage }: { stage: FileStage }) {
     stage === "done"
       ? "text-amber-strong"
       : stage === "error" || stage === "skipped"
-        ? "text-cat-grammar"
+        ? "text-alert"
         : "text-ink-soft";
   const spinning = stage === "reading" || stage === "rendering" || stage === "uploading";
   return (
@@ -397,7 +397,7 @@ function GalleryCard({
               {t("upload.badge.detected")}
             </span>
           ) : (
-            <span className="inline-block text-xs px-2 py-1 rounded-md bg-cat-grammar/15 text-cat-grammar font-semibold">
+            <span className="inline-block text-xs px-2 py-1 rounded-md bg-alert/10 text-alert font-semibold">
               {t("upload.badge.notDetected")}
             </span>
           )}
@@ -448,7 +448,7 @@ function GalleryCard({
           </button>
           <button
             type="button"
-            className="text-[15px] text-cat-grammar font-semibold hover:underline"
+            className="text-[15px] text-alert font-semibold hover:underline"
             onClick={() => onDelete(page.pageId)}
           >
             {t("upload.delete")}

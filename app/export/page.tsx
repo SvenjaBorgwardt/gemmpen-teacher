@@ -250,7 +250,7 @@ function ExportOverview() {
       {roundId && data && (
         <>
           {errorText && (
-            <div className="gp-card p-4 mb-6 border-l-4 border-cat-grammar">
+            <div className="gp-card p-4 mb-6 border-l-4 border-alert">
               <p className="text-ink text-[15px]">{errorText}</p>
             </div>
           )}

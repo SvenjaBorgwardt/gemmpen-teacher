@@ -17,7 +17,7 @@ import { PDFDocument } from "pdf-lib";
 import type { Assessment, Criterion, FeedbackDraft, SubjectConfig, Submission } from "../types";
 import type { GradeResult } from "../grading/grade";
 import { guardText } from "../prompts/postprocess";
-import { FlowingPage, loadFonts } from "./layout";
+import { COLORS, FlowingPage, loadFonts } from "./layout";
 import { sanitizeForWinAnsi } from "./text-sanitize";
 
 /** Sprachabhaengige Beschriftungen fuer das Feedback-PDF (nicht die App-UI). */
@@ -105,6 +105,24 @@ export async function buildFeedbackPdf(input: FeedbackPdfInput): Promise<Uint8Ar
   const labels = labelsFor(config.feedbackLanguage);
   const forbidden = config.forbiddenWords;
 
+  // Kategorie-Farbe eines Kriteriums (grammar/sentence/...); Inhalts-Kriterien
+  // ohne colorKey erhalten den Gold-Akzent - so ziehen sich die vier Farben als
+  // roter Faden durch Balken, Ueberschriften und Zitat.
+  const catColor = (colorKey?: string) =>
+    (colorKey && COLORS.categories[colorKey]) || COLORS.amberStrong;
+
+  // Score-Objekt-Segmente: ein Segment je Kriterium in Rasterreihenfolge.
+  const segments = config.rubric.criteria.map((cr) => {
+    const ca = assessment.criteria.find((c) => c.criterionId === cr.id);
+    return { points: ca?.points ?? 0, maxPoints: cr.maxPoints, color: catColor(cr.colorKey) };
+  });
+
+  // Kernzitat: die eigenen Worte der Schuelerin (erste belegte Beobachtung).
+  const heroObs = feedback.observations.find((o) => o.quote && o.quote.trim() !== "");
+  const heroCriterion = heroObs?.criterionId
+    ? criterionById(config, heroObs.criterionId)
+    : undefined;
+
   const doc = await PDFDocument.create();
   doc.setTitle(sanitizeForWinAnsi(`${labels.documentTitle} - ${submission.studentAlias}`));
   doc.setAuthor("GemmPen");
@@ -125,25 +143,25 @@ export async function buildFeedbackPdf(input: FeedbackPdfInput): Promise<Uint8Ar
   if (config.rubric.taskPrompt) {
     flow.drawLabel(`${labels.task}: ${firstLine(config.rubric.taskPrompt)}`);
   }
-  flow.addSpace(6);
+  flow.addSpace(16);
 
-  // Note, hervorgehoben.
-  flow.drawHeading(`${labels.grade}: ${grade.display}`, 20);
-  flow.drawParagraph(capitalize(grade.label), { size: 12, italic: true });
+  // Kernstueck: die eigenen Worte der Schuelerin, gross und zuerst. Das Blatt
+  // sagt "das hast du geschrieben", bevor es die Note nennt.
+  if (heroObs?.quote) {
+    flow.drawPullQuote(heroObs.quote, catColor(heroCriterion?.colorKey));
+    flow.addSpace(14);
+  }
+
+  // Note als Score-Objekt (identisch zur App): Zahl + kategorie-segmentierter Balken.
+  flow.drawScoreObject(grade.display, capitalize(grade.label), segments);
+  flow.drawParagraph(
+    guarded(`${assessment.totalPoints} / ${assessment.maxPoints} ${labels.points}`, forbidden),
+    { size: 11, color: COLORS.inkSoft },
+  );
   flow.addSpace(10);
   flow.drawDivider();
 
-  flow.drawHeading(labels.page1Heading);
-  flow.drawParagraph(
-    guarded(
-      `${assessment.totalPoints} / ${assessment.maxPoints} ${labels.points}`,
-      forbidden,
-    ),
-    { size: 12 },
-  );
-  flow.addSpace(6);
-
-  flow.drawHeading(labels.strengthHeading, 13);
+  flow.drawHeading(labels.strengthHeading, 14);
   flow.drawParagraph(guarded(feedback.strength, forbidden), { size: 12 });
 
   /* ---------------------------- Seite 2 ---------------------------- */
@@ -167,9 +185,9 @@ export async function buildFeedbackPdf(input: FeedbackPdfInput): Promise<Uint8Ar
       const pointsText = criterionAssessment
         ? ` (${criterionAssessment.points} / ${criterion.maxPoints} ${labels.points})`
         : "";
-      flow.drawHeading(`${criterion.name}${pointsText}`, 13);
+      flow.drawAreaHeading(`${criterion.name}${pointsText}`, catColor(criterion.colorKey));
     } else {
-      flow.drawHeading(labels.observationHeading, 13);
+      flow.drawAreaHeading(labels.observationHeading, COLORS.amberStrong);
     }
 
     flow.drawParagraph(guarded(observation.text, forbidden), { size: 11.5 });

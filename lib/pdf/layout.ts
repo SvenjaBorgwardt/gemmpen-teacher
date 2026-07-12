@@ -34,6 +34,16 @@ export const COLORS = {
   } as Record<string, RGB>,
 };
 
+/** Mischt zwei Farben: `ratio` Anteil von a, Rest b. Fuer dezente Track-Farben. */
+function mixColor(a: RGB, b: RGB, ratio: number): RGB {
+  const c = Math.min(1, Math.max(0, ratio));
+  return rgb(
+    a.red * c + b.red * (1 - c),
+    a.green * c + b.green * (1 - c),
+    a.blue * c + b.blue * (1 - c),
+  );
+}
+
 export const PAGE_WIDTH = 595.28; // A4 in pt
 export const PAGE_HEIGHT = 841.89;
 export const MARGIN = 56;
@@ -257,6 +267,124 @@ export class FlowingPage {
   addSpace(height: number): void {
     this.ensureSpace(height);
     this.y -= height;
+  }
+
+  /**
+   * Grosses Schueler-Zitat als Kernstueck der Seite (Serif-Italic), mit farbiger
+   * Seiten-Linie in der Kategorie-Farbe. Bewusst prominent gesetzt: das Blatt
+   * sagt zuerst "das hast du geschrieben", dann kommt die Note.
+   */
+  drawPullQuote(quote: string, accent: RGB): void {
+    const size = 19;
+    const lineHeight = size * 1.32;
+    const railW = 3;
+    const gap = 14;
+    const textX = MARGIN + railW + gap;
+    const textWidth = CONTENT_WIDTH - railW - gap;
+    const clean = sanitizeForWinAnsi(`„${quote}“`);
+    const lines = wrapText(clean, textWidth, (t) =>
+      this.fonts.titleItalic.widthOfTextAtSize(t, size),
+    );
+    const textHeight = lines.length * lineHeight;
+    this.ensureSpace(textHeight + 8);
+    const top = this.y;
+    this.page.drawRectangle({
+      x: MARGIN,
+      y: top - textHeight,
+      width: railW,
+      height: textHeight,
+      color: accent,
+    });
+    let cursor = top - size;
+    for (const line of lines) {
+      this.page.drawText(line, {
+        x: textX,
+        y: cursor,
+        size,
+        font: this.fonts.titleItalic,
+        color: COLORS.ink,
+      });
+      cursor -= lineHeight;
+    }
+    this.y = top - textHeight - 8;
+  }
+
+  /**
+   * Score-Objekt: Note gross, daneben die Einordnung, darunter ein
+   * kategorie-segmentierter Balken (ein Segment je Kriterium, Breite nach
+   * maxPoints, Fuellung nach erreichten Punkten). Dasselbe Objekt wie in der
+   * App (components/score-object.tsx), damit Blatt und App ein Stueck sind.
+   */
+  drawScoreObject(
+    display: string,
+    label: string,
+    segments: { points: number; maxPoints: number; color: RGB }[],
+  ): void {
+    const numSize = 27;
+    this.ensureSpace(numSize + 28);
+    const top = this.y;
+    const displayClean = sanitizeForWinAnsi(display);
+    this.page.drawText(displayClean, {
+      x: MARGIN,
+      y: top - numSize,
+      size: numSize,
+      font: this.fonts.title,
+      color: COLORS.ink,
+    });
+    if (label) {
+      const numW = this.fonts.title.widthOfTextAtSize(displayClean, numSize);
+      this.page.drawText(sanitizeForWinAnsi(label), {
+        x: MARGIN + numW + 12,
+        y: top - numSize + 5,
+        size: 13,
+        font: this.fonts.titleItalic,
+        color: COLORS.inkSoft,
+      });
+    }
+    const barTop = top - numSize - 12;
+    const barHeight = 7;
+    const gap = 3;
+    const totalMax = segments.reduce((s, x) => s + Math.max(0, x.maxPoints), 0) || 1;
+    const usableW = CONTENT_WIDTH - gap * Math.max(0, segments.length - 1);
+    let x = MARGIN;
+    for (const seg of segments) {
+      const segW = usableW * (Math.max(0, seg.maxPoints) / totalMax);
+      this.page.drawRectangle({
+        x,
+        y: barTop - barHeight,
+        width: segW,
+        height: barHeight,
+        color: mixColor(seg.color, COLORS.paper, 0.16),
+      });
+      const fillW =
+        seg.maxPoints > 0 ? segW * Math.min(1, Math.max(0, seg.points / seg.maxPoints)) : 0;
+      if (fillW > 0) {
+        this.page.drawRectangle({
+          x,
+          y: barTop - barHeight,
+          width: fillW,
+          height: barHeight,
+          color: seg.color,
+        });
+      }
+      x += segW + gap;
+    }
+    this.y = barTop - barHeight - 12;
+  }
+
+  /** Abschnitts-Ueberschrift mit farbigem Seiten-Tick in der Kategorie-Farbe. */
+  drawAreaHeading(text: string, accent: RGB, size = 13): void {
+    this.ensureSpace(size + 20);
+    const clean = sanitizeForWinAnsi(text);
+    this.page.drawRectangle({ x: MARGIN, y: this.y - size, width: 4, height: size, color: accent });
+    this.page.drawText(clean, {
+      x: MARGIN + 12,
+      y: this.y - size,
+      size,
+      font: this.fonts.title,
+      color: COLORS.ink,
+    });
+    this.y -= size + 10;
   }
 
   /**

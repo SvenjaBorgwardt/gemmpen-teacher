@@ -8,11 +8,12 @@
 
 :root {
   /* Warm Paper Basis */
-  --paper: #faf6ef;         /* Creme-Hintergrund */
-  --paper-raised: #fffdf8;  /* Karten, leicht heller */
+  --paper: #f0e7d5;         /* Creme-Hintergrund, tiefer damit Karten sich abheben */
+  --paper-raised: #fffdf8;  /* Karten, deutlich heller als der Grund */
   --ink: #2b2620;           /* Haupttext, warmes Dunkelbraun */
   --ink-soft: #5c5449;      /* Sekundaertext */
-  --line: #e7ddcc;          /* Trennlinien */
+  --line: #d8c9b0;          /* Trennlinien, dunkler fuer sichtbare Kanten */
+  --card-shadow: 0 1px 2px rgba(43, 38, 32, 0.06), 0 1px 1px rgba(43, 38, 32, 0.04);
 
   /* Akzente */
   --amber: #b8860b;         /* Gold-Akzent */
@@ -75,37 +76,58 @@ h1, h2, h3, h4 {
   outline-offset: 2px;
 }
 
-/* Wiederverwendbare Bausteine */
-.gp-card {
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
-  border-radius: 12px;
+/*
+  Wiederverwendbare Bausteine liegen bewusst in @layer components, damit
+  Tailwind-Utilities (in @layer utilities, spaeter in der Layer-Ordnung)
+  gewinnen. Sonst schlaegt die ungelayerte Basisregel jede Utility-Klasse:
+  z.B. wuerde .gp-card { border } ein border-l-4 border-cat-grammar killen,
+  wodurch die Kategorie-Farben (unsere Signatur) nie sichtbar wuerden.
+*/
+@layer components {
+  .gp-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .gp-button {
+    background: var(--amber-strong);
+    color: #fffdf8;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.65rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.15s ease;
+    cursor: pointer;
+  }
+  .gp-button:hover { background: var(--amber); }
+
+  .gp-button-ghost {
+    background: transparent;
+    color: var(--amber-strong);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.65rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  .gp-button-ghost:hover { background: var(--amber-soft); }
 }
 
-.gp-button {
-  background: var(--amber-strong);
-  color: #fffdf8;
-  border-radius: 10px;
-  font-weight: 600;
-  padding: 0.65rem 1.25rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background 0.15s ease;
-  cursor: pointer;
+/* Bewegung zuruecknehmen, wenn die Nutzerin das im System eingestellt hat. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
-.gp-button:hover { background: var(--amber); }
-
-.gp-button-ghost {
-  background: transparent;
-  color: var(--amber-strong);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  font-weight: 600;
-  padding: 0.65rem 1.25rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-.gp-button-ghost:hover { background: var(--amber-soft); }
