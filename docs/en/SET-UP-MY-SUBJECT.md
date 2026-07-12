@@ -10,7 +10,7 @@ Fill in:
 
 - **Subject**: for example English, German, Business Studies.
 - **Language of the student texts** and **language of the feedback**: usually the same, but they can differ.
-- **Class level**: for example "Vocational college, IAF31".
+- **Class level**: for example "Class 11A".
 - **Level**: for example "B1-B2".
 
 These details make sure the marking is written in the right language and pitched at the right level.
@@ -79,7 +79,7 @@ If the marking helper is not reachable, calibration runs as a test so you can st
 
 ## Step 6: Summary and saving
 
-Give the configuration a display name (for example "English Comment, IAF31") so you can find it again in the subjects list. You see a summary of everything you entered. Check it, then click "Save configuration".
+Give the configuration a display name (for example "English Comment, Class 11A") so you can find it again in the subjects list. You see a summary of everything you entered. Check it, then click "Save configuration".
 
 If anything required is still missing, the page shows you a readable list of what needs attention. After saving, you can go straight to "My subjects" or straight to uploading work for this subject.
 

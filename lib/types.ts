@@ -139,7 +139,7 @@ export interface SubjectConfig {
   textLanguage: LanguageCode;
   /** Sprache des erzeugten Feedbacks. */
   feedbackLanguage: LanguageCode;
-  /** Klassenstufe, frei, z.B. "Berufskolleg IAF31". */
+  /** Klassenstufe, frei, z.B. "Klasse 11a". */
   classLevel: string;
   /** Niveau, z.B. "B1-B2". */
   level: string;

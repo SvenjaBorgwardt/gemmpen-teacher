@@ -164,7 +164,7 @@ export async function listRounds(): Promise<string[]> {
    data/submissions/<roundId>/round.json  -  Rundenname (Stapel-Bezeichnung)
 
    Die Lehrkraft vergibt beim Hochladen einen sprechenden Namen (z.B.
-   "IAF31 - 2026-05-12"). Dieser wird getrennt von den einzelnen Arbeiten
+   "Class 11A - 2026-05-12"). Dieser wird getrennt von den einzelnen Arbeiten
    gespeichert, damit er unabhaengig von Submissions ueberlebt und in allen
    Rundenauswahllisten (Pruefen/Bewerten/Export) angezeigt werden kann. Ohne
    gespeicherten Namen bleibt die technische roundId (Zeitstempel-Code) der

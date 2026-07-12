@@ -51,7 +51,7 @@
   "setup.step1.textLanguage": "Language of the student texts",
   "setup.step1.feedbackLanguage": "Language of the feedback",
   "setup.step1.classLevel": "Year group",
-  "setup.step1.classLevel.placeholder": "e.g. Year 11, Group IAF31",
+  "setup.step1.classLevel.placeholder": "e.g. Class 11A",
   "setup.step1.level": "Level",
   "setup.step1.level.placeholder": "e.g. B1-B2",
   "setup.step1.lang.de": "German",

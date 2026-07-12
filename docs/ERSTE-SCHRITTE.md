@@ -74,7 +74,7 @@ Die Scan-Anleitung (`scan-anleitung.pdf`) erklaert beide Wege noch einmal in ein
 
 ## Schritt 7: Hochladen
 
-Klicke auf "Hochladen". Gib der Runde einen Namen (zum Beispiel "IAF31 - 2026-05-12"). Ziehe die Fotos oder das Scan-PDF in das Feld, oder waehle die Dateien aus.
+Klicke auf "Hochladen". Gib der Runde einen Namen (zum Beispiel "Klasse 11a - 2026-05-12"). Ziehe die Fotos oder das Scan-PDF in das Feld, oder waehle die Dateien aus.
 
 [SCREENSHOT: Hochladen-Seite mit Dropzone]
 

@@ -32,7 +32,7 @@ function testConfig(): SubjectConfig {
     subject: "Englisch",
     textLanguage: "en",
     feedbackLanguage: "en",
-    classLevel: "IAF31",
+    classLevel: "Class 11A",
     level: "B1-B2",
     gradingSystem: "nrw-points",
     feedbackStyle: { tone: "warm und klar", length: "medium", includePractice: true },

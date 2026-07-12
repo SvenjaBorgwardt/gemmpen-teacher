@@ -53,6 +53,10 @@ All student data stays in one folder called `data` on your computer. Nothing is 
 - [FAQ](docs/en/FAQ.md) - short answers to common questions
 - [Disclaimer and terms of use](docs/en/DISCLAIMER.md) - what the app does and who is responsible for what
 
+## Feedback and questions
+
+Found a problem or have a question? Open an issue on GitHub. Because this is an early version, your feedback directly shapes what gets fixed next.
+
 ## Legal
 
 **Who is responsible?** GemmPen Teacher runs entirely on your computer and sends nothing to the internet. Under the GDPR, the controller for the student data being processed is you as the teacher using it, or your school, not the developer of the app. The developer never sees any data and is neither the controller nor a processor. Details and your duties are in the [privacy guide](docs/en/PRIVACY.md).

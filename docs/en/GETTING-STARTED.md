@@ -74,7 +74,7 @@ The scanning guide (`scan-anleitung.pdf`) explains both routes again in plain la
 
 ## Step 7: Upload
 
-Click "Upload". Give the batch a name (for example "IAF31 - 2026-05-12"). Drag the photos or the scanned PDF into the box, or choose the files.
+Click "Upload". Give the batch a name (for example "Class 11A - 2026-05-12"). Drag the photos or the scanned PDF into the box, or choose the files.
 
 [SCREENSHOT: upload page with drop zone]
 

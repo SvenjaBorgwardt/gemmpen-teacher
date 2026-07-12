@@ -53,6 +53,10 @@ Alle Schülerdaten bleiben in einem Ordner namens `data` auf deinem Rechner. Nic
 - [Häufige Fragen](docs/HAEUFIGE-FRAGEN.md) - kurze Antworten auf häufige Fragen
 - [Haftungsausschluss und Nutzungshinweise](docs/HAFTUNGSAUSSCHLUSS.md) - was die App leistet und wer wofür verantwortlich ist
 
+## Rückmeldungen und Fragen
+
+Ein Problem gefunden oder eine Frage? Öffne ein Issue auf GitHub. Weil das eine frühe Version ist, fließen deine Rückmeldungen direkt in die nächsten Verbesserungen ein.
+
 ## Rechtliches
 
 **Wer ist verantwortlich?** GemmPen Teacher läuft vollständig auf deinem Rechner und schickt nichts ins Internet. Verantwortlicher im Sinne der DSGVO für die verarbeiteten Schülerdaten bist du als nutzende Lehrkraft beziehungsweise deine Schule, nicht die Entwicklerin der App. Die Entwicklerin bekommt keine Daten zu sehen und ist weder Verantwortliche noch Auftragsverarbeiterin. Einzelheiten und deine Pflichten stehen im [Datenschutz-Leitfaden](docs/DATENSCHUTZ.md).

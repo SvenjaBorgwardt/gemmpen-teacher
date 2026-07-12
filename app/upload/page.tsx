@@ -175,7 +175,7 @@ export default function UploadPage() {
           value={roundLabel}
           onChange={(e) => setRoundLabel(e.target.value)}
           className="w-full max-w-md rounded-md border border-line bg-paper-raised px-3 py-2 text-ink"
-          placeholder="IAF31 - 2026-05-12"
+          placeholder="Class 11A - 2026-05-12"
         />
       </div>
 

@@ -10,7 +10,7 @@ Trage ein:
 
 - **Fach**: zum Beispiel Englisch, Deutsch, Wirtschaft.
 - **Sprache der Schuelertexte** und **Sprache des Feedbacks**: meist gleich, koennen aber unterschiedlich sein.
-- **Klassenstufe**: zum Beispiel "Berufskolleg IAF31".
+- **Klassenstufe**: zum Beispiel "Klasse 11a".
 - **Niveau**: zum Beispiel "B1-B2".
 
 Diese Angaben sorgen dafuer, dass die Auswertung in der richtigen Sprache und auf dem richtigen Niveau formuliert.
@@ -79,7 +79,7 @@ Ist die Auswertung gerade nicht erreichbar, laeuft die Kalibrierung als Testlauf
 
 ## Schritt 6: Zusammenfassung und Speichern
 
-Gib der Konfiguration einen Anzeigenamen (zum Beispiel "Englisch Comment, IAF31"), damit du sie in der Faecher-Liste wiederfindest. Du siehst eine Zusammenfassung aller Angaben. Pruefe sie, dann klicke auf "Konfiguration speichern".
+Gib der Konfiguration einen Anzeigenamen (zum Beispiel "Englisch Comment, Klasse 11a"), damit du sie in der Faecher-Liste wiederfindest. Du siehst eine Zusammenfassung aller Angaben. Pruefe sie, dann klicke auf "Konfiguration speichern".
 
 Fehlt noch etwas Pflichtangaben, zeigt dir die Seite eine lesbare Liste, was noch fehlt. Nach dem Speichern kannst du direkt weiter zu "Meine Faecher" oder direkt Arbeiten fuer dieses Fach hochladen.
 
