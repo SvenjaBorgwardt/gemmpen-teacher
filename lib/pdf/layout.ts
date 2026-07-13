@@ -5,11 +5,17 @@
   nacheinander auf eine Seite und legt automatisch eine neue Seite an, wenn
   der verbleibende Platz nicht mehr reicht (Seitenumbruch-Logik). Design
   gemaess Hausregel 7 (Warm Paper): Creme-Hintergrund, Amber/Gold-Akzente,
-  Times (eingebauter Serif-Font von pdf-lib) fuer Titel, Helvetica fuer
-  Fliesstext.
+  Cormorant Garamond fuer Titel, DM Sans fuer Fliesstext - dieselben
+  Marken-Schriften wie in der App, damit Blatt und Bildschirm ein Stueck sind.
+  Die Schriften liegen als eingebundene TrueType-Dateien im Repo (lib/pdf/fonts,
+  offline-first), werden per fontkit eingebettet und beim Einbetten auf die
+  tatsaechlich genutzten Glyphen reduziert (subset).
 */
 
-import { PDFDocument, PDFFont, PDFPage, rgb, StandardFonts } from "pdf-lib";
+import { promises as fs } from "fs";
+import path from "path";
+import { PDFDocument, PDFFont, PDFPage, rgb } from "pdf-lib";
+import fontkit from "@pdf-lib/fontkit";
 import type { RGB } from "pdf-lib";
 import { sanitizeForWinAnsi } from "./text-sanitize";
 import { wrapText } from "./wrap";
@@ -50,21 +56,64 @@ export const MARGIN = 56;
 export const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2;
 
 export interface Fonts {
-  title: PDFFont; // Times-Bold, fuer Ueberschriften
-  titleItalic: PDFFont;
-  body: PDFFont; // Helvetica, fuer Fliesstext
-  bodyBold: PDFFont;
-  bodyItalic: PDFFont;
+  title: PDFFont; // Cormorant Garamond SemiBold, fuer Ueberschriften
+  titleItalic: PDFFont; // Cormorant Garamond SemiBold Italic
+  body: PDFFont; // DM Sans Regular, fuer Fliesstext
+  bodyBold: PDFFont; // DM Sans SemiBold
+  bodyItalic: PDFFont; // DM Sans Italic
 }
 
+/** Dateinamen der eingebundenen Marken-Schriften (siehe lib/pdf/fonts/README.md). */
+const FONT_FILES = {
+  title: "CormorantGaramond-SemiBold.ttf",
+  titleItalic: "CormorantGaramond-SemiBoldItalic.ttf",
+  body: "DMSans-Regular.ttf",
+  bodyBold: "DMSans-SemiBold.ttf",
+  bodyItalic: "DMSans-Italic.ttf",
+} as const;
+
+/** Verzeichnis der eingebundenen TrueType-Dateien (relativ zum Projektstamm). */
+function fontsDir(): string {
+  return path.join(process.cwd(), "lib", "pdf", "fonts");
+}
+
+/**
+ * Rohbytes der Schriftdateien, einmal von der Platte gelesen und dann
+ * gehalten. So liest der Export nicht bei jedem PDF erneut fuenf Dateien.
+ */
+const fontBytesCache = new Map<string, Uint8Array>();
+
+async function readFontBytes(file: string): Promise<Uint8Array> {
+  const cached = fontBytesCache.get(file);
+  if (cached) return cached;
+  const buf = await fs.readFile(path.join(fontsDir(), file));
+  const bytes = new Uint8Array(buf);
+  fontBytesCache.set(file, bytes);
+  return bytes;
+}
+
+/**
+ * Bettet die Marken-Schriften (Cormorant Garamond + DM Sans) in das Dokument
+ * ein. fontkit erlaubt eigene TrueType-Fonts.
+ *
+ * Bewusst OHNE pdf-libs Subsetting eingebettet (subset: false): dessen
+ * Subsetter verwirft bei Cormorant Garamond zusammengesetzte Glyphen, sodass
+ * im Titel und in der Note Buchstaben fehlen wuerden. Die Dateien sind bereits
+ * beim Bundlen auf den WinAnsi-Zeichenraum reduziert (siehe fonts/README.md,
+ * ~136 KB fuer alle fuenf Schnitte), also bleibt das eingebettete PDF klein.
+ */
 export async function loadFonts(doc: PDFDocument): Promise<Fonts> {
-  return {
-    title: await doc.embedFont(StandardFonts.TimesRomanBold),
-    titleItalic: await doc.embedFont(StandardFonts.TimesRomanItalic),
-    body: await doc.embedFont(StandardFonts.Helvetica),
-    bodyBold: await doc.embedFont(StandardFonts.HelveticaBold),
-    bodyItalic: await doc.embedFont(StandardFonts.HelveticaOblique),
-  };
+  doc.registerFontkit(fontkit);
+  const embed = async (file: string) =>
+    doc.embedFont(await readFontBytes(file), { subset: false });
+  const [title, titleItalic, body, bodyBold, bodyItalic] = await Promise.all([
+    embed(FONT_FILES.title),
+    embed(FONT_FILES.titleItalic),
+    embed(FONT_FILES.body),
+    embed(FONT_FILES.bodyBold),
+    embed(FONT_FILES.bodyItalic),
+  ]);
+  return { title, titleItalic, body, bodyBold, bodyItalic };
 }
 
 /**
