@@ -9,11 +9,16 @@
   Kriteriums (grammar/sentence/vocabulary/connectives); Inhalts-Kriterien ohne
   Kategorie fuellen sich im Gold-Akzent.
 
-  Reaktiv: die Fuellung animiert bei jeder Punkteaenderung (respektiert
-  prefers-reduced-motion global in globals.css). Dasselbe visuelle Objekt
-  erscheint als Kopf von PDF-Seite 1, damit App und Blatt sichtbar ein Stueck
-  sind (siehe lib/pdf/feedback-pdf.ts).
+  Eine Legende darunter macht Farbe -> Kategorie sichtbar und nennt die Punkte,
+  damit die Bedeutung nicht allein an der Farbe haengt (Barrierefreiheit).
+
+  Reaktiv und lebendig: die Fuellung animiert beim Erscheinen gestaffelt und bei
+  jeder Punkteaenderung (respektiert prefers-reduced-motion global in
+  globals.css). Dasselbe visuelle Objekt erscheint als Kopf von PDF-Seite 1,
+  damit App und Blatt sichtbar ein Stueck sind (siehe lib/pdf/feedback-pdf.ts).
 */
+
+import { useEffect, useState } from "react";
 
 export interface ScoreSegment {
   key: string;
@@ -51,6 +56,14 @@ export function ScoreObject({
 }) {
   const hasSegments = segments.some((s) => s.maxPoints > 0);
 
+  // Gestaffelte Mount-Animation: Balken faellt von 0 auf die Zielbreite. Der
+  // reduced-motion-Guard in globals.css setzt die Transition dann auf ~0.
+  const [filled, setFilled] = useState(false);
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setFilled(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   return (
     <div>
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -64,33 +77,54 @@ export function ScoreObject({
       </div>
 
       {hasSegments && (
-        <div
-          className="mt-3 flex gap-1 h-3"
-          role="img"
-          aria-label={label ? `${display}, ${label}` : display}
-        >
-          {segments.map((s) => {
-            const color = colorFor(s.colorKey);
-            const pct =
-              s.maxPoints > 0 ? Math.min(100, Math.max(0, (s.points / s.maxPoints) * 100)) : 0;
-            return (
-              <div
-                key={s.key}
-                className="relative h-full rounded-full overflow-hidden"
-                style={{
-                  flexGrow: Math.max(0.001, s.maxPoints),
-                  background: `color-mix(in srgb, ${color} 16%, var(--paper))`,
-                }}
-                title={`${s.name}: ${s.points} / ${s.maxPoints}`}
-              >
+        <>
+          <div className="mt-3 flex gap-1 h-3" aria-hidden="true">
+            {segments.map((s, i) => {
+              const color = colorFor(s.colorKey);
+              const pct =
+                s.maxPoints > 0 ? Math.min(100, Math.max(0, (s.points / s.maxPoints) * 100)) : 0;
+              return (
                 <div
-                  className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-300 ease-out"
-                  style={{ width: `${pct}%`, background: color }}
+                  key={s.key}
+                  className="relative h-full rounded-full overflow-hidden"
+                  style={{
+                    flexGrow: Math.max(0.001, s.maxPoints),
+                    background: `color-mix(in srgb, ${color} 16%, var(--paper))`,
+                  }}
+                >
+                  <div
+                    className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-500 ease-out"
+                    style={{
+                      width: filled ? `${pct}%` : "0%",
+                      background: color,
+                      transitionDelay: `${i * 90}ms`,
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Legende: Farbe -> Kategorie -> Punkte, damit die Bedeutung nicht nur an der Farbe haengt. */}
+          <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
+            {segments.map((s) => (
+              <li
+                key={s.key}
+                className="inline-flex items-center gap-1.5 text-[13px] text-ink-soft"
+              >
+                <span
+                  className="inline-block w-2.5 h-2.5 rounded-full shrink-0"
+                  style={{ background: colorFor(s.colorKey) }}
+                  aria-hidden="true"
                 />
-              </div>
-            );
-          })}
-        </div>
+                <span className="text-ink">{s.name}</span>
+                <span className="tabular-nums lining-nums">
+                  {s.points}/{s.maxPoints}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </div>
   );

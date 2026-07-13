@@ -2,12 +2,12 @@ Aufgabenstellung:
 Write a comment in the role of an employee representative at NorthStar Logistics AG. Take a clear position on introducing AI tools at the workplace. Follow this structure: introduction, three counter-arguments (strongest to weakest), a bridge, three own arguments (weakest to strongest), and a conclusion. Each argument must contain a claim, a reason, and an example.
 
 Ergebnis der Kriterien-Bewertung (Punkte und Begruendungen als Grundlage, nicht woertlich wiederholen):
-- Aufbau und Argumentation: 25 Punkte. Testbegruendung.
-- Argument-Vollstaendigkeit (CRE): 16 Punkte. Testbegruendung.
-- Grammatik: 13 Punkte. Testbegruendung.
-- Satzbau: 13 Punkte. Testbegruendung.
-- Allgemeiner Wortschatz: 13 Punkte. Testbegruendung.
-- Fachwortschatz und Verknuepfungen: 13 Punkte. Testbegruendung.
+- Structure and argumentation: 25 Punkte. Testbegruendung.
+- Argument completeness (CRE): 16 Punkte. Testbegruendung.
+- Grammar: 13 Punkte. Testbegruendung.
+- Sentence structure: 13 Punkte. Testbegruendung.
+- Vocabulary: 13 Punkte. Testbegruendung.
+- Topic vocabulary and connectives: 13 Punkte. Testbegruendung.
 
 Text der lernenden Person:
 """

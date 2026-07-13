@@ -1,14 +1,14 @@
 {
   "id": "englisch-comment",
-  "name": "Englisch Comment (rollenbasierte Stellungnahme)",
-  "subject": "Englisch",
+  "name": "English Comment (role-based response)",
+  "subject": "English",
   "textLanguage": "en",
   "feedbackLanguage": "en",
-  "classLevel": "Berufskolleg, IT-Ausbildung",
+  "classLevel": "Vocational college, IT",
   "level": "B1-B2",
   "gradingSystem": "nrw-points",
   "feedbackStyle": {
-    "tone": "warm und klar, ermutigend",
+    "tone": "warm and clear, encouraging",
     "length": "medium",
     "includePractice": true
   },
@@ -42,64 +42,64 @@
     "criteria": [
       {
         "id": "structure",
-        "name": "Aufbau und Argumentation",
+        "name": "Structure and argumentation",
         "description": "Follows the required structure (intro, three counter-arguments strongest to weakest, bridge, three own arguments weakest to strongest, conclusion) as flowing prose.",
         "maxPoints": 27,
         "levels": [
           {
             "minPoints": 22,
             "maxPoints": 27,
-            "label": "sehr gut",
+            "label": "very good",
             "descriptor": "All parts present and ordered as required, arguments developed as connected prose."
           },
           {
             "minPoints": 14,
             "maxPoints": 21,
-            "label": "gut bis befriedigend",
+            "label": "good to satisfactory",
             "descriptor": "Most parts present and mostly in order, some arguments carried further than others."
           },
           {
             "minPoints": 0,
             "maxPoints": 13,
-            "label": "im Aufbau",
+            "label": "developing",
             "descriptor": "Several structural parts still to be added or reordered."
           }
         ]
       },
       {
         "id": "cre-argument",
-        "name": "Argument-Vollstaendigkeit (CRE)",
+        "name": "Argument completeness (CRE)",
         "description": "Each of the six arguments is only counted when claim, reason and example are all present. This criterion checks that all-or-nothing rule across arguments.",
         "maxPoints": 18,
         "allOrNothing": {
-          "rule": "Ein Argument zaehlt nur mit Claim UND Reason UND Example.",
+          "rule": "An argument only counts with claim AND reason AND example.",
           "parts": ["Claim", "Reason", "Example"]
         }
       },
       {
         "id": "grammar",
-        "name": "Grammatik",
+        "name": "Grammar",
         "description": "Correctness of structures, tenses, agreement.",
         "maxPoints": 15,
         "colorKey": "grammar"
       },
       {
         "id": "sentence",
-        "name": "Satzbau",
+        "name": "Sentence structure",
         "description": "Variety, complexity and cohesion of sentences; flowing prose rather than labels.",
         "maxPoints": 15,
         "colorKey": "sentence"
       },
       {
         "id": "vocabulary",
-        "name": "Allgemeiner Wortschatz",
+        "name": "Vocabulary",
         "description": "Range and precision of everyday vocabulary, own wording.",
         "maxPoints": 15,
         "colorKey": "vocabulary"
       },
       {
         "id": "connectives",
-        "name": "Fachwortschatz und Verknuepfungen",
+        "name": "Topic vocabulary and connectives",
         "description": "Topic vocabulary about work and technology plus connectives that link arguments.",
         "maxPoints": 15,
         "colorKey": "connectives"
@@ -117,7 +117,7 @@
           "vocabulary": 12,
           "connectives": 13
         },
-        "note": "Vollstaendige Struktur, CRE in allen Argumenten erfuellt, sichere Sprache."
+        "note": "Complete structure, CRE met in every argument, confident language."
       },
       {
         "id": "sample-mid",
@@ -130,7 +130,7 @@
           "vocabulary": 8,
           "connectives": 8
         },
-        "note": "Struktur erkennbar, aber Argumente ohne Beispiele, daher CRE 0."
+        "note": "Structure recognisable, but arguments without examples, so CRE is 0."
       }
     ]
   },

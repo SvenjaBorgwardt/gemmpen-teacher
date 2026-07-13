@@ -68,6 +68,9 @@ h1, h2, h3, h4 {
   color: var(--ink);
   line-height: 1.2;
   font-weight: 600;
+  /* Lining-Ziffern: sonst rendert Cormorant Zahlen als Mediaevalziffern,
+     wodurch z.B. "11A" wie "IIA" aussieht. */
+  font-feature-settings: "lnum" 1;
 }
 
 /* Sichtbarer Fokus fuer Tastaturbedienung */
@@ -118,6 +121,32 @@ h1, h2, h3, h4 {
     cursor: pointer;
   }
   .gp-button-ghost:hover { background: var(--amber-soft); }
+}
+
+/*
+  Handmarking (Signatur-Akzent): eine handgezogene Tinten-Unterstreichung unter
+  zitierten Schuelerworten - die App sieht aus wie von Hand korrigiert, nicht
+  wie ein Dashboard. Farbe ueber --mark steuerbar (Standard: Gold-Akzent), damit
+  ein Zitat die Kategorie-Farbe seines Bereichs tragen kann. Reines CSS
+  (SVG-Maske als handgezeichnete Welle), keine externen Assets.
+*/
+.ink-underline {
+  position: relative;
+  padding-bottom: 0.16em;
+}
+.ink-underline::after {
+  content: "";
+  position: absolute;
+  left: -0.06em;
+  right: -0.06em;
+  bottom: 0;
+  height: 0.36em;
+  background-color: var(--mark, var(--amber-strong));
+  -webkit-mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='7' viewBox='0 0 64 7' preserveAspectRatio='none'><path d='M1 4C12 1.5 22 5.5 33 4S54 5.5 63 4L63 6C54 7.2 44 4.4 33 5.8S12 4.4 1 5.8Z' fill='%23000'/></svg>") repeat-x left bottom;
+  -webkit-mask-size: 2.7em 100%;
+  mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='7' viewBox='0 0 64 7' preserveAspectRatio='none'><path d='M1 4C12 1.5 22 5.5 33 4S54 5.5 63 4L63 6C54 7.2 44 4.4 33 5.8S12 4.4 1 5.8Z' fill='%23000'/></svg>") repeat-x left bottom;
+  mask-size: 2.7em 100%;
+  pointer-events: none;
 }
 
 /* Bewegung zuruecknehmen, wenn die Nutzerin das im System eingestellt hat. */

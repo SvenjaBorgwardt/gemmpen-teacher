@@ -50,9 +50,16 @@ export default function Home() {
           <p className="text-xs uppercase tracking-wide text-amber-strong font-semibold mb-4">
             {t("dashboard.sample.badge")}
           </p>
-          <blockquote className="border-l-2 border-cat-grammar pl-4 mb-5">
-            <p className="font-serif text-xl italic text-ink leading-snug">
-              &ldquo;{t("dashboard.sample.quote")}&rdquo;
+          <blockquote className="mb-6">
+            <p className="font-serif text-xl italic text-ink leading-relaxed">
+              &ldquo;
+              <span
+                className="ink-underline"
+                style={{ ["--mark" as string]: "var(--cat-grammar)" } as React.CSSProperties}
+              >
+                {t("dashboard.sample.quote")}
+              </span>
+              &rdquo;
             </p>
           </blockquote>
           <ScoreObject

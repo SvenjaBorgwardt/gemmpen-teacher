@@ -2,21 +2,21 @@ Aufgabenstellung:
 Write a comment in the role of an employee representative at NorthStar Logistics AG. Take a clear position on introducing AI tools at the workplace. Follow this structure: introduction, three counter-arguments (strongest to weakest), a bridge, three own arguments (weakest to strongest), and a conclusion. Each argument must contain a claim, a reason, and an example.
 
 Bewertungskriterien:
-- id: structure | Aufbau und Argumentation (0 bis 27 Punkte)
+- id: structure | Structure and argumentation (0 bis 27 Punkte)
   Follows the required structure (intro, three counter-arguments strongest to weakest, bridge, three own arguments weakest to strongest, conclusion) as flowing prose.
-  22 bis 27 (sehr gut): All parts present and ordered as required, arguments developed as connected prose.
-  14 bis 21 (gut bis befriedigend): Most parts present and mostly in order, some arguments carried further than others.
-  0 bis 13 (im Aufbau): Several structural parts still to be added or reordered.
-- id: cre-argument | Argument-Vollstaendigkeit (CRE) (0 bis 18 Punkte)
+  22 bis 27 (very good): All parts present and ordered as required, arguments developed as connected prose.
+  14 bis 21 (good to satisfactory): Most parts present and mostly in order, some arguments carried further than others.
+  0 bis 13 (developing): Several structural parts still to be added or reordered.
+- id: cre-argument | Argument completeness (CRE) (0 bis 18 Punkte)
   Each of the six arguments is only counted when claim, reason and example are all present. This criterion checks that all-or-nothing rule across arguments.
-  Alles-oder-Nichts-Regel: Ein Argument zaehlt nur mit Claim UND Reason UND Example.. Alle Teile noetig: Claim, Reason, Example. Nur bei allen Teilen volle Punkte, sonst 0.
-- id: grammar | Grammatik (0 bis 15 Punkte)
+  Alles-oder-Nichts-Regel: An argument only counts with claim AND reason AND example.. Alle Teile noetig: Claim, Reason, Example. Nur bei allen Teilen volle Punkte, sonst 0.
+- id: grammar | Grammar (0 bis 15 Punkte)
   Correctness of structures, tenses, agreement.
-- id: sentence | Satzbau (0 bis 15 Punkte)
+- id: sentence | Sentence structure (0 bis 15 Punkte)
   Variety, complexity and cohesion of sentences; flowing prose rather than labels.
-- id: vocabulary | Allgemeiner Wortschatz (0 bis 15 Punkte)
+- id: vocabulary | Vocabulary (0 bis 15 Punkte)
   Range and precision of everyday vocabulary, own wording.
-- id: connectives | Fachwortschatz und Verknuepfungen (0 bis 15 Punkte)
+- id: connectives | Topic vocabulary and connectives (0 bis 15 Punkte)
   Topic vocabulary about work and technology plus connectives that link arguments.
 
 Text der lernenden Person:

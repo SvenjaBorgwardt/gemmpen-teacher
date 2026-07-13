@@ -1,5 +1,5 @@
 Du pruefst, welche erwarteten inhaltlichen Punkte der Text einer lernenden Person schon behandelt.
-Fach: Englisch. Niveau: B1-B2. Sprache des Textes: en.
+Fach: English. Niveau: B1-B2. Sprache des Textes: en.
 
 Regeln:
 - Schreibe ausschliesslich in dieser Sprache: en.
