@@ -1,0 +1,19 @@
+{
+  "submissionId": "sub-cd34",
+  "strength": "You take a clear position and give both sides a fair hearing. Several of your points already convince, because you back them with a real example from the depot.",
+  "observations": [
+    {
+      "criterionId": "cre-argument",
+      "text": "When you add a concrete example, the argument carries much more weight, as in your point about scanning at gate two.",
+      "quote": "for example the scanning of parcels at gate two, which two workers do all day"
+    },
+    {
+      "criterionId": "structure",
+      "text": "You have two solid own arguments; a third would balance them against your three counter-arguments.",
+      "quote": "They can also catch errors in the delivery lists"
+    }
+  ],
+  "nextStep": "Take your counter-argument about learning the new programs and add a reason and a short example, so it becomes a full argument too.",
+  "practice": "Write one more own argument with a claim, a reason and an example, and place it as your strongest point just before the conclusion.",
+  "updatedAt": "2026-07-13T09:00:00.000Z"
+}

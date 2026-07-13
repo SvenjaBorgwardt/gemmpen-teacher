@@ -1,0 +1,64 @@
+{
+  "submissionId": "sub-ab12",
+  "configId": "english-comment-demo",
+  "criteria": [
+    {
+      "criterionId": "structure",
+      "points": 24,
+      "reasoning": "All parts are present and in the required order: the introduction names the role and position, three counter-arguments run from strongest to weakest, a bridge turns to the own side, and three own arguments build to the conclusion. It reads as connected prose rather than a list of labels.",
+      "evidence": [
+        "As an employee representative at NorthStar Logistics AG, I would like to comment on the plan",
+        "In conclusion, I support a careful introduction with clear rules and training for everyone."
+      ]
+    },
+    {
+      "criterionId": "cre-argument",
+      "points": 18,
+      "reasoning": "Every one of the six arguments carries a claim, a reason and an example, so each counts in full under the all-or-nothing rule. The strongest counter-argument names the task, gives the reason and adds a concrete case.",
+      "evidence": [
+        "for example the sorting of delivery notes, which three colleagues do every morning"
+      ]
+    },
+    {
+      "criterionId": "grammar",
+      "points": 13,
+      "reasoning": "Tenses and agreement stay under control across long sentences, including the conditional in the closing argument.",
+      "evidence": [
+        "if we help to shape the rules for these tools, we can protect our colleagues"
+      ]
+    },
+    {
+      "criterionId": "sentence",
+      "points": 12,
+      "reasoning": "Sentences vary in length and use subordinate clauses to connect ideas, which keeps the argument flowing.",
+      "evidence": [
+        "they can reduce mistakes in the routing of parcels, which currently cost us extra hours"
+      ]
+    },
+    {
+      "criterionId": "vocabulary",
+      "points": 12,
+      "reasoning": "The everyday vocabulary is precise and largely the student's own wording.",
+      "evidence": [
+        "data protection",
+        "tiring repetitive steps"
+      ]
+    },
+    {
+      "criterionId": "connectives",
+      "points": 13,
+      "reasoning": "Clear signposting guides the reader through the structure and links the arguments to one another.",
+      "evidence": [
+        "However",
+        "Most importantly",
+        "In conclusion"
+      ]
+    }
+  ],
+  "totalPoints": 92,
+  "maxPoints": 105,
+  "gradeDisplay": "13.1 / 15",
+  "released": true,
+  "createdAt": "2026-07-13T09:00:00.000Z",
+  "updatedAt": "2026-07-13T09:00:00.000Z"
+}

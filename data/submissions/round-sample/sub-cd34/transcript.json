@@ -1,0 +1,17 @@
+{
+  "submissionId": "sub-cd34",
+  "lines": [
+    { "index": 0, "text": "As a member of the works council at NorthStar Logistics AG, I want to give my view on the new AI tools.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 1, "text": "Some colleagues are really worried about the plan.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 2, "text": "They fear that the software will take over their tasks, for example the scanning of parcels at gate two, which two workers do all day.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 3, "text": "Others feel watched, because the tools record how fast we work, like the counter that already shows our packing speed on the screen.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 4, "text": "A third group simply finds the new programs hard to learn.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 5, "text": "Still, there are good reasons for the tools, so I want to look at the other side.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 6, "text": "They can handle routine work, for example filling in the same delivery form again and again, so we get more time for our customers.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 7, "text": "They can also catch errors in the delivery lists, such as a wrong postcode, before a parcel leaves the depot.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 8, "text": "In the end, I think we should agree to the tools if the company trains everyone and sets fair rules.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } }
+  ],
+  "unclearCount": 0,
+  "confirmed": true,
+  "updatedAt": "2026-07-13T09:00:00.000Z"
+}

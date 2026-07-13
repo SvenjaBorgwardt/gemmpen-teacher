@@ -1,0 +1,62 @@
+{
+  "submissionId": "sub-ef56",
+  "configId": "english-comment-demo",
+  "criteria": [
+    {
+      "criterionId": "structure",
+      "points": 14,
+      "reasoning": "The shape of a comment is recognisable: an opening, some points against, a turn with 'On the other hand', some points for, and a conclusion. The parts are still short and could each grow into a full paragraph.",
+      "evidence": [
+        "I am an employee representative at NorthStar Logistics AG.",
+        "In conclusion, I think we should try it with clear rules."
+      ]
+    },
+    {
+      "criterionId": "cre-argument",
+      "points": 3,
+      "reasoning": "One argument is complete, because it adds a concrete example. The others give a claim on its own, so they do not count yet under the all-or-nothing rule. Adding a reason and an example to each would raise this score quickly.",
+      "evidence": [
+        "It saves time, for example the morning report is ready faster now."
+      ]
+    },
+    {
+      "criterionId": "grammar",
+      "points": 9,
+      "reasoning": "Short sentences are handled correctly, which is a solid base to build longer ones on.",
+      "evidence": [
+        "Some colleagues do not like the idea."
+      ]
+    },
+    {
+      "criterionId": "sentence",
+      "points": 7,
+      "reasoning": "Most sentences follow the same short pattern; joining some of them would add variety.",
+      "evidence": [
+        "It can reduce errors and make the work easier."
+      ]
+    },
+    {
+      "criterionId": "vocabulary",
+      "points": 8,
+      "reasoning": "The everyday words fit the topic; a few more work-related terms would add precision.",
+      "evidence": [
+        "Data protection"
+      ]
+    },
+    {
+      "criterionId": "connectives",
+      "points": 8,
+      "reasoning": "You use 'On the other hand' and 'In conclusion' to signal the turn and the ending, which already helps the reader.",
+      "evidence": [
+        "On the other hand",
+        "In conclusion"
+      ]
+    }
+  ],
+  "totalPoints": 49,
+  "maxPoints": 105,
+  "gradeDisplay": "7 / 15",
+  "released": true,
+  "createdAt": "2026-07-13T09:00:00.000Z",
+  "updatedAt": "2026-07-13T09:00:00.000Z"
+}

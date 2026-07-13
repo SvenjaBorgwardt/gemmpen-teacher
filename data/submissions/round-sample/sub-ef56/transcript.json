@@ -1,0 +1,18 @@
+{
+  "submissionId": "sub-ef56",
+  "lines": [
+    { "index": 0, "text": "I am an employee representative at NorthStar Logistics AG.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 1, "text": "I want to talk about AI at work.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 2, "text": "Some colleagues do not like the idea.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 3, "text": "They think that jobs could be automated.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 4, "text": "Data protection is also a topic.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 5, "text": "And some people are not sure about computers.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 6, "text": "On the other hand, AI can help us.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 7, "text": "It saves time, for example the morning report is ready faster now.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 8, "text": "It can reduce errors and make the work easier.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 9, "text": "In conclusion, I think we should try it with clear rules.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } }
+  ],
+  "unclearCount": 0,
+  "confirmed": true,
+  "updatedAt": "2026-07-13T09:00:00.000Z"
+}

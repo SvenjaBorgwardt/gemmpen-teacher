@@ -1,0 +1,19 @@
+{
+  "submissionId": "sub-ef56",
+  "strength": "You already know the shape of a comment: you set out points on both sides and close with your own view. Your point about time even comes with a real example, which is the model to follow for the rest.",
+  "observations": [
+    {
+      "criterionId": "cre-argument",
+      "text": "This argument counts in full because it has a claim, a reason and an example all together.",
+      "quote": "It saves time, for example the morning report is ready faster now."
+    },
+    {
+      "criterionId": "sentence",
+      "text": "Joining two short ideas into one sentence, as you did here, adds flow; try it a few more times.",
+      "quote": "It can reduce errors and make the work easier."
+    }
+  ],
+  "nextStep": "Pick one of your points against AI and add a reason and a short example, so it becomes a complete argument like your point about time.",
+  "practice": "Take the sentence 'Data protection is also a topic' and grow it into three sentences: a claim, a reason, and an example.",
+  "updatedAt": "2026-07-13T09:00:00.000Z"
+}

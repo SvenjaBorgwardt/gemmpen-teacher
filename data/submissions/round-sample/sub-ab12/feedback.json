@@ -1,0 +1,19 @@
+{
+  "submissionId": "sub-ab12",
+  "strength": "You lead the reader through the whole argument with real confidence. The introduction sets out your role and position at once, and every argument backs its point with a concrete case from the workplace.",
+  "observations": [
+    {
+      "criterionId": "cre-argument",
+      "text": "Each argument brings a claim, a reason and an example together, which is exactly what makes the case convincing.",
+      "quote": "for example the sorting of delivery notes, which three colleagues do every morning"
+    },
+    {
+      "criterionId": "connectives",
+      "text": "Your signposting words make the structure easy to follow from the first line to the last.",
+      "quote": "Most importantly, if we help to shape the rules for these tools"
+    }
+  ],
+  "nextStep": "In your next comment, give your final own argument the most space of all, so your strongest point lands last and stays with the reader.",
+  "practice": "Take your conclusion and add one sentence that looks ahead, for example what should happen in the first month after the tools arrive.",
+  "updatedAt": "2026-07-13T09:00:00.000Z"
+}

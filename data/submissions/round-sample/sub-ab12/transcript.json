@@ -1,0 +1,18 @@
+{
+  "submissionId": "sub-ab12",
+  "lines": [
+    { "index": 0, "text": "As an employee representative at NorthStar Logistics AG, I would like to comment on the plan to introduce AI tools at our workplace.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 1, "text": "Many colleagues worry about their jobs.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 2, "text": "They fear that routine tasks will be automated, for example the sorting of delivery notes, which three colleagues do every morning.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 3, "text": "Another concern is data protection, because the tools collect a lot of information about how we work.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 4, "text": "A third worry is that people who are not used to computers could be left behind.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 5, "text": "However, there are also strong reasons in favour of the change.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 6, "text": "First, the tools can take over tiring repetitive steps, so we have more time for customer calls.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 7, "text": "Second, they can reduce mistakes in the routing of parcels, which currently cost us extra hours.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 8, "text": "Most importantly, if we help to shape the rules for these tools, we can protect our colleagues and still profit from the new possibilities.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } },
+    { "index": 9, "text": "In conclusion, I support a careful introduction with clear rules and training for everyone.", "position": { "pageIndex": 0, "top": 0, "bottom": 0 } }
+  ],
+  "unclearCount": 0,
+  "confirmed": true,
+  "updatedAt": "2026-07-13T09:00:00.000Z"
+}

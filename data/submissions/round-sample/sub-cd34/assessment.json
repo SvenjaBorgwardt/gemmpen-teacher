@@ -1,0 +1,64 @@
+{
+  "submissionId": "sub-cd34",
+  "configId": "english-comment-demo",
+  "criteria": [
+    {
+      "criterionId": "structure",
+      "points": 20,
+      "reasoning": "The main parts are there and mostly in order: an introduction with your role, three counter-arguments, a short bridge, and two own arguments before the conclusion. A third own argument and a fuller bridge would round out the shape.",
+      "evidence": [
+        "As a member of the works council at NorthStar Logistics AG, I want to give my view on the new AI tools.",
+        "In the end, I think we should agree to the tools if the company trains everyone and sets fair rules."
+      ]
+    },
+    {
+      "criterionId": "cre-argument",
+      "points": 12,
+      "reasoning": "Four of the arguments bring claim, reason and example together, so they count in full. The third counter-argument and the bridge stand as a claim on their own, so they do not count yet under the all-or-nothing rule.",
+      "evidence": [
+        "for example the scanning of parcels at gate two, which two workers do all day",
+        "such as a wrong postcode, before a parcel leaves the depot"
+      ]
+    },
+    {
+      "criterionId": "grammar",
+      "points": 11,
+      "reasoning": "Structures and tenses are mostly steady across the comment, with only small slips in the longer sentences.",
+      "evidence": [
+        "if the company trains everyone and sets fair rules"
+      ]
+    },
+    {
+      "criterionId": "sentence",
+      "points": 10,
+      "reasoning": "You mix short and longer sentences and use relative clauses to join your ideas.",
+      "evidence": [
+        "the scanning of parcels at gate two, which two workers do all day"
+      ]
+    },
+    {
+      "criterionId": "vocabulary",
+      "points": 10,
+      "reasoning": "The topic vocabulary fits the workplace and is mostly your own wording.",
+      "evidence": [
+        "routine work",
+        "delivery lists"
+      ]
+    },
+    {
+      "criterionId": "connectives",
+      "points": 10,
+      "reasoning": "Linking words such as 'Still' and 'In the end' guide the reader; a few more between the counter-arguments would help.",
+      "evidence": [
+        "Still",
+        "In the end"
+      ]
+    }
+  ],
+  "totalPoints": 73,
+  "maxPoints": 105,
+  "gradeDisplay": "10.4 / 15",
+  "released": true,
+  "createdAt": "2026-07-13T09:00:00.000Z",
+  "updatedAt": "2026-07-13T09:00:00.000Z"
+}

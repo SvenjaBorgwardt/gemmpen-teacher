@@ -50,6 +50,12 @@ next-env.d.ts
 # Beispiel-Konfigurationen (Startvorlagen) gehoeren mit ins Repo.
 !/data/config/beispiele/
 !/data/config/beispiele/**
+# Mitgelieferte synthetische Demo-Daten (frei erfunden, keine echten Schueler):
+# ein Fach plus eine Beispiel-Runde, damit ein frischer Clone sofort einen
+# vollstaendigen englischen Demo-Stand zeigt.
+!/data/config/english-comment-demo.json
+!/data/submissions/round-sample/
+!/data/submissions/round-sample/**
 
 # Ingest-Testdaten (regenerierbar ueber test/make_test_data.py)
 /test/fixtures
