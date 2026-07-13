@@ -279,6 +279,9 @@ function AssessDetail() {
           const borderClass = criterion?.colorKey
             ? CATEGORY_CLASS[criterion.colorKey]
             : "border-line";
+          const markColor = criterion?.colorKey
+            ? `var(--cat-${criterion.colorKey})`
+            : "var(--amber-strong)";
           return (
             <div key={c.criterionId} className={`gp-card p-4 border-l-4 ${borderClass}`}>
               <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
@@ -314,11 +317,12 @@ function AssessDetail() {
                 className="w-full rounded border border-line bg-paper-raised px-2 py-1 text-ink text-[15px] mb-2"
               />
               {c.evidence.length > 0 && (
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-x-5 gap-y-2.5 pt-1">
                   {c.evidence.map((q, i) => (
                     <span
                       key={i}
-                      className="text-sm italic text-ink-soft bg-amber-soft/50 rounded px-2 py-1"
+                      className="text-sm italic text-ink ink-underline"
+                      style={{ ["--mark" as string]: markColor } as React.CSSProperties}
                     >
                       &ldquo;{q}&rdquo;
                     </span>
@@ -348,25 +352,34 @@ function AssessDetail() {
               />
             </div>
 
-            {feedback.observations.map((o, i) => (
-              <div key={i}>
-                <label className="block text-sm font-semibold text-ink-soft mb-1">
-                  {t("assess.detail.feedback.observation")} {i + 1}
-                </label>
-                <textarea
-                  value={o.text}
-                  onChange={(e) => updateObservation(i, e.target.value)}
-                  disabled={released}
-                  rows={2}
-                  className="w-full rounded border border-line bg-paper-raised px-2 py-1 text-ink text-[15px] mb-1"
-                />
-                {o.quote && (
-                  <p className="text-sm italic text-ink-soft bg-amber-soft/50 rounded px-2 py-1 inline-block">
-                    &ldquo;{o.quote}&rdquo;
-                  </p>
-                )}
-              </div>
-            ))}
+            {feedback.observations.map((o, i) => {
+              const obsCriterion = o.criterionId ? criteriaById.get(o.criterionId) : undefined;
+              const obsMark = obsCriterion?.colorKey
+                ? `var(--cat-${obsCriterion.colorKey})`
+                : "var(--amber-strong)";
+              return (
+                <div key={i}>
+                  <label className="block text-sm font-semibold text-ink-soft mb-1">
+                    {t("assess.detail.feedback.observation")} {i + 1}
+                  </label>
+                  <textarea
+                    value={o.text}
+                    onChange={(e) => updateObservation(i, e.target.value)}
+                    disabled={released}
+                    rows={2}
+                    className="w-full rounded border border-line bg-paper-raised px-2 py-1 text-ink text-[15px] mb-1"
+                  />
+                  {o.quote && (
+                    <p
+                      className="text-sm italic text-ink ink-underline inline-block mt-1"
+                      style={{ ["--mark" as string]: obsMark } as React.CSSProperties}
+                    >
+                      &ldquo;{o.quote}&rdquo;
+                    </p>
+                  )}
+                </div>
+              );
+            })}
 
             <div>
               <label className="block text-sm font-semibold text-ink-soft mb-1">
