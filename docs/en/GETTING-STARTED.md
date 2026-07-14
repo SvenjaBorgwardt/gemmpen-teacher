@@ -22,7 +22,7 @@ Open the GemmPen Teacher folder. Inside it there is a folder called `install`. D
 - Mac: `start-mac.command`
 - Windows: `start-windows.bat`
 
-[SCREENSHOT: install folder showing both start files]
+![install folder showing both start files](../screenshots/02-install-ordner.png)
 
 ### The first time: your computer may show a security warning
 
@@ -35,7 +35,7 @@ Because GemmPen Teacher is a small free program and does not come from a big app
 3. Choose "Open" from the small menu.
 4. The same message appears again, but now with an "Open" button. Click "Open". You only do this once. Every start after that is a normal double click.
 
-[SCREENSHOT: Mac security message with the Open button]
+![Mac security message with the Open button](../screenshots/03-mac-sicherheitsmeldung.png)
 
 **On Windows.** If a blue window says "Windows protected your PC":
 
@@ -43,7 +43,7 @@ Because GemmPen Teacher is a small free program and does not come from a big app
 2. A button "Run anyway" appears at the bottom. Click it.
 3. You only do this once.
 
-[SCREENSHOT: Windows SmartScreen with More info and Run anyway]
+![Windows SmartScreen with More info and Run anyway](../screenshots/04-windows-smartscreen.png)
 
 If your computer also asks whether Node.js or Ollama may make changes to your device, that belongs to their own installation and you can allow it.
 
@@ -56,7 +56,7 @@ A window opens and checks things in order:
 5. Whether all the app's building blocks are installed. This takes a little longer the first time.
 6. Then the app starts and opens automatically in your browser at `localhost:3000`.
 
-[SCREENSHOT: start window during the download]
+![start window during the download](../screenshots/05-startfenster.png)
 
 If anything gets stuck, the message always tells you what to do next. Nothing fails silently. The second time you start it, everything is much faster, because the download and setup are already done.
 
@@ -84,7 +84,7 @@ Click "Subjects", or open the folder `public/templates`. It contains two ready-t
 
 Print the template you want for every student. In the print dialog, make sure the scaling is set to **100 percent** and **"Fit to page" is switched off**. Otherwise the corner markers will be off and later recognition will be less accurate.
 
-[SCREENSHOT: printed template showing the four corner markers]
+![printed template showing the four corner markers](../screenshots/06-vorlage-eckmarker.png)
 
 ## Step 6: Have students write, then collect the work
 
