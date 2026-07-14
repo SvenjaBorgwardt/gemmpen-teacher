@@ -24,6 +24,10 @@ No. The app runs entirely on your own computer. There are no ongoing costs and n
 
 Only for the one-time setup (downloading Ollama and the marking helper the first time you start it). After that, the actual work, uploading, reviewing, marking, and exporting, all runs without an internet connection.
 
+## A security warning appears when I start it, what do I do?
+
+This is normal and not an error. Because GemmPen Teacher is a small free program without an app store, Mac and Windows show a one-time security warning the first time you open the start file. It comes from your operating system, not from the app. On a Mac, hold the Control key and click the start file (or right click it), choose "Open", then click "Open" again in the second dialog. On Windows, click "More info" in the blue "Windows protected your PC" window, then "Run anyway". You only do this once; every start after that is a normal double click. The full step-by-step version is in `GETTING-STARTED.md`, step 2.
+
 ## How long does marking take?
 
 Reading handwriting and marking both run on your own computer, so the time depends on how fast your computer is. For a typical class size (under 40 pieces of work), expect a few minutes for the whole batch, possibly longer depending on your computer. While a batch is running, the page shows a progress message and stays usable.

@@ -24,6 +24,10 @@ Nein. Die App laeuft komplett auf deinem eigenen Rechner, es gibt keine laufende
 
 Nur fuer die einmalige Einrichtung (Herunterladen von Ollama und der Auswertung beim ersten Start). Danach funktioniert die tatsaechliche Arbeit, also Hochladen, Pruefen, Bewerten und Export, ohne Internetverbindung.
 
+## Beim Start kommt eine Sicherheitswarnung, was mache ich?
+
+Das ist normal und kein Fehler. Weil GemmPen Teacher ein kleines, kostenloses Programm ohne App-Store ist, zeigen Mac und Windows beim allerersten Oeffnen der Startdatei einmalig eine Sicherheitswarnung. Sie kommt vom Betriebssystem, nicht von der App. Auf dem Mac klickst du die Startdatei mit gedrueckter Taste "ctrl" (Control) an oder machst einen Rechtsklick, waehlst "Oeffnen" und dann im zweiten Fenster noch einmal "Oeffnen". Auf Windows klickst du im blauen Fenster "Der Computer wurde durch Windows geschuetzt" auf "Weitere Informationen" und dann auf "Trotzdem ausfuehren". Das machst du nur einmal, jeder weitere Start ist ein normaler Doppelklick. Die ausfuehrliche Fassung mit allen Schritten steht in `ERSTE-SCHRITTE.md`, Schritt 2.
+
 ## Wie lange dauert die Auswertung?
 
 Das Lesen der Handschrift und die Bewertung laufen auf deinem eigenen Rechner, deshalb haengt die Dauer von dessen Leistung ab. Bei einer ueblichen Klassengroesse (unter 40 Arbeiten) ist mit einigen Minuten fuer die gesamte Runde zu rechnen, je nach Rechner auch laenger. Waehrend eine Runde laeuft, zeigt die Seite einen laufenden Hinweis, das Fenster bleibt bedienbar.

@@ -13,7 +13,7 @@ This guide walks you through the whole journey: from your first launch to the fi
 
 Download Ollama from [ollama.com](https://ollama.com) and install it like any other program. You only do this once. GemmPen Teacher needs Ollama to read handwriting and mark student work.
 
-[SCREENSHOT: Ollama download page in the browser]
+![Ollama download page in the browser](../screenshots/01-ollama-download.png)
 
 ## Step 2: Start GemmPen Teacher
 
@@ -23,6 +23,29 @@ Open the GemmPen Teacher folder. Inside it there is a folder called `install`. D
 - Windows: `start-windows.bat`
 
 [SCREENSHOT: install folder showing both start files]
+
+### The first time: your computer may show a security warning
+
+Because GemmPen Teacher is a small free program and does not come from a big app store, Mac and Windows show a one-time safety warning the first time you open the start file. This warning comes from your operating system, not from GemmPen Teacher, so it does not tell you how to continue. For this kind of program that is normal. Here is the safe way past it.
+
+**On a Mac.** If you see "cannot be opened because it is from an unidentified developer" (or "Apple could not verify..."), do not click "Cancel" or "Move to Trash". Instead:
+
+1. Close that message.
+2. In the `install` folder, hold the Control key and click `start-mac.command` once (or right click it).
+3. Choose "Open" from the small menu.
+4. The same message appears again, but now with an "Open" button. Click "Open". You only do this once. Every start after that is a normal double click.
+
+[SCREENSHOT: Mac security message with the Open button]
+
+**On Windows.** If a blue window says "Windows protected your PC":
+
+1. Click the small text "More info".
+2. A button "Run anyway" appears at the bottom. Click it.
+3. You only do this once.
+
+[SCREENSHOT: Windows SmartScreen with More info and Run anyway]
+
+If your computer also asks whether Node.js or Ollama may make changes to your device, that belongs to their own installation and you can allow it.
 
 A window opens and checks things in order:
 
@@ -41,7 +64,7 @@ If anything gets stuck, the message always tells you what to do next. Nothing fa
 
 Click "Settings" in the navigation. This shows you whether the marking helper is reachable.
 
-[SCREENSHOT: settings page with a green connection status]
+![Settings page with a green connection status](../screenshots/07-einstellungen.en.png)
 
 - A green message saying the helper is reachable means you are ready to go.
 - If it says the helper is not reachable, check that Ollama is running and click "Test connection".
@@ -51,7 +74,7 @@ Click "Settings" in the navigation. This shows you whether the marking helper is
 
 Click "Set up". A wizard walks you through six steps: subject and framework, task description, expected content and marking scheme, grading system and feedback style, optional sample answers, and finally a summary.
 
-[SCREENSHOT: setup wizard, step 1 of 6]
+![Setup wizard, step 1 of 6](../screenshots/08-einrichten-schritt1.en.png)
 
 For a full walkthrough, see `SET-UP-MY-SUBJECT.md`. At the end you save the configuration. It then appears under "Subjects".
 
@@ -76,7 +99,7 @@ The scanning guide (`scan-anleitung.pdf`) explains both routes again in plain la
 
 Click "Upload". Give the batch a name (for example "Class 11A - 2026-05-12"). Drag the photos or the scanned PDF into the box, or choose the files.
 
-[SCREENSHOT: upload page with drop zone]
+![Upload page with the drop zone](../screenshots/09-hochladen.en.png)
 
 Each recognised page then shows up in a gallery with a cropped view of the header. A label tells you whether the template was recognised. If it was not, recognition may be less accurate, but the image is still kept. Assign each page to a student code (you can also apply one code to a page and all the following pages in one click, handy for multi-page work). Then move on to review.
 
@@ -84,21 +107,21 @@ Each recognised page then shows up in a gallery with a cropped view of the heade
 
 Click "Check text". Choose the batch and click "Start recognition". This reads the text of every piece of work. With a lot of work, this can take a few minutes.
 
-[SCREENSHOT: review overview with a status per piece of work]
+![Review overview with a status per piece of work](../screenshots/10-pruefen-uebersicht.en.png)
 
 Then open each piece of work on its own. On the left you see the scanned image, on the right the recognised text, line by line. Uncertain spots are highlighted in yellow. Click one and correct the text in the box below it. Only once no uncertain spot is left can you confirm the work.
 
-[SCREENSHOT: review detail view with a highlighted uncertain spot]
+![Review detail view with a highlighted uncertain spot](../screenshots/11-pruefen-detail.en.png)
 
 ## Step 9: Assess
 
 Click "Assess". First choose the subject configuration for this batch and click "Use". Then click "Start assessment". This produces, for every confirmed piece of work, points, reasoning with quotes, and a feedback draft.
 
-[SCREENSHOT: assess overview with a grade per piece of work]
+![Assess overview with a grade per piece of work](../screenshots/12-bewerten-uebersicht.en.png)
 
 Open a piece of work. You see each criterion as a card: points, reasoning with quotes from the text, and below that the feedback draft (a strength, observations, a next step, and optionally a practice suggestion). Everything can be edited. The overall grade at the top updates immediately when you change a point value.
 
-[SCREENSHOT: assess detail view with criterion cards]
+![Assess detail view with criterion cards](../screenshots/13-bewerten-karten.en.png)
 
 Click "Save changes" to store your edits, and "Release this paper" once you are happy with it. Only released work can be exported.
 
@@ -106,7 +129,7 @@ Click "Save changes" to store your edits, and "Release this paper" once you are 
 
 Click "Save feedback". Choose the batch. Under "Download feedback sheets" you can download the PDF for a single piece of work, or all of them at once. Each feedback PDF has three pages: grade and strength, observations with quotes, and a next step plus a practice suggestion.
 
-[SCREENSHOT: export page with a download list]
+![Export page with a download list](../screenshots/14-export.en.png)
 
 You can also download a class overview as a PDF (a table with student codes, points per area, and grade), and, if you made any corrections while marking, a correction file for the next round of marking (see `FAQ.md`).
 

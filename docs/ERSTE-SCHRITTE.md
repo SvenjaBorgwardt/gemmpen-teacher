@@ -13,7 +13,7 @@ Diese Anleitung zeigt dir den ganzen Weg: vom ersten Start bis zum fertigen Feed
 
 Lade Ollama von [ollama.com](https://ollama.com) herunter und installiere es wie jedes andere Programm. Das machst du nur einmal. GemmPen Teacher braucht Ollama, um Handschrift zu lesen und Arbeiten zu bewerten.
 
-[SCREENSHOT: Ollama-Download-Seite im Browser]
+![Ollama-Download-Seite im Browser](screenshots/01-ollama-download.png)
 
 ## Schritt 2: GemmPen Teacher starten
 
@@ -23,6 +23,29 @@ Oeffne den Ordner mit GemmPen Teacher. Darin liegt ein Ordner `install`. Doppelk
 - Windows: `start-windows.bat`
 
 [SCREENSHOT: Ordner install mit den beiden Startdateien]
+
+### Beim ersten Mal: dein Rechner zeigt vielleicht eine Sicherheitsmeldung
+
+Weil GemmPen Teacher ein kleines, kostenloses Programm ist und nicht aus einem grossen App-Store kommt, zeigen Mac und Windows beim allerersten Oeffnen der Startdatei einmalig eine Sicherheitswarnung. Diese Meldung kommt vom Betriebssystem, nicht von GemmPen Teacher, deshalb sagt sie dir auch nicht, wie es weitergeht. Bei dieser Art Programm ist das normal. So kommst du sicher daran vorbei.
+
+**Auf dem Mac.** Wenn "kann nicht geoeffnet werden, da es von einem nicht verifizierten Entwickler stammt" erscheint (oder "Apple kann nicht ueberpruefen ..."), klicke nicht auf "Abbrechen" oder "In den Papierkorb". Stattdessen:
+
+1. Schliesse die Meldung.
+2. Halte im Ordner `install` die Taste "ctrl" (Control) gedrueckt und klicke einmal auf `start-mac.command` (oder mach einen Rechtsklick darauf).
+3. Waehle im kleinen Menue "Oeffnen".
+4. Dieselbe Meldung erscheint noch einmal, jetzt aber mit einem Knopf "Oeffnen". Klicke auf "Oeffnen". Das machst du nur einmal. Jeder weitere Start ist ein ganz normaler Doppelklick.
+
+[SCREENSHOT: Mac-Sicherheitsmeldung mit dem Knopf Oeffnen]
+
+**Auf Windows.** Wenn ein blaues Fenster "Der Computer wurde durch Windows geschuetzt" erscheint:
+
+1. Klicke auf den kleinen Text "Weitere Informationen".
+2. Unten erscheint ein Knopf "Trotzdem ausfuehren". Klicke darauf.
+3. Das machst du nur einmal.
+
+[SCREENSHOT: Windows-SmartScreen mit Weitere Informationen und Trotzdem ausfuehren]
+
+Fragt dein Rechner zusaetzlich, ob Node.js oder Ollama Aenderungen vornehmen duerfen, gehoert das zu deren eigener Installation und du kannst es erlauben.
 
 Das Startfenster prueft jetzt der Reihe nach:
 
@@ -41,7 +64,7 @@ Bleibt irgendwo eine Meldung stehen, sagt sie dir immer, was zu tun ist. Es gibt
 
 Klicke in der Navigation oben auf "Einstellungen". Hier siehst du, ob die Auswertung erreichbar ist.
 
-[SCREENSHOT: Einstellungen-Seite mit gruenem Verbindungsstatus]
+![Einstellungen-Seite mit gruenem Verbindungsstatus](screenshots/07-einstellungen.de.png)
 
 - Ein gruener Hinweis "Die Auswertung ist erreichbar" bedeutet: alles bereit.
 - Steht dort "Die Auswertung ist nicht erreichbar", pruefe, ob Ollama laeuft, und klicke auf "Verbindung testen".
@@ -51,7 +74,7 @@ Klicke in der Navigation oben auf "Einstellungen". Hier siehst du, ob die Auswer
 
 Klicke auf "Einrichten". Ein Assistent fuehrt dich in sechs Schritten durch die Einrichtung: Fach und Rahmen, Aufgabenstellung, Erwartungshorizont und Bewertungsraster, Notensystem und Feedback-Stil, optional Beispielarbeiten, und zum Schluss eine Zusammenfassung.
 
-[SCREENSHOT: Einrichten-Assistent, Schritt 1 von 6]
+![Einrichten-Assistent, Schritt 1 von 6](screenshots/08-einrichten-schritt1.de.png)
 
 Eine ausfuehrliche Anleitung dazu findest du in `MEIN-FACH-EINRICHTEN.md`. Am Ende speicherst du die Konfiguration. Sie erscheint danach unter "Faecher".
 
@@ -76,7 +99,7 @@ Die Scan-Anleitung (`scan-anleitung.pdf`) erklaert beide Wege noch einmal in ein
 
 Klicke auf "Hochladen". Gib der Runde einen Namen (zum Beispiel "Klasse 11a - 2026-05-12"). Ziehe die Fotos oder das Scan-PDF in das Feld, oder waehle die Dateien aus.
 
-[SCREENSHOT: Hochladen-Seite mit Dropzone]
+![Hochladen-Seite mit Dropzone](screenshots/09-hochladen.de.png)
 
 Jede erkannte Seite erscheint danach in einer Galerie mit einem Ausschnitt der Kopfzeile. Ein Hinweis zeigt, ob die Vorlage erkannt wurde. Wurde sie nicht erkannt, wird die Erkennung ungenauer, das Bild wird aber trotzdem uebernommen. Ordne jede Seite einem Schueler-Kuerzel zu (du kannst eine Zuordnung auch fuer mehrere folgende Seiten uebernehmen, praktisch bei mehrseitigen Arbeiten). Danach geht es weiter zum Pruefen.
 
@@ -84,21 +107,21 @@ Jede erkannte Seite erscheint danach in einer Galerie mit einem Ausschnitt der K
 
 Klicke auf "Pruefen". Waehle die Runde und klicke auf "Erkennung starten". Das liest den Text jeder Arbeit ein. Bei vielen Arbeiten kann das ein paar Minuten dauern.
 
-[SCREENSHOT: Pruefen-Uebersicht mit Status je Arbeit]
+![Pruefen-Uebersicht mit Status je Arbeit](screenshots/10-pruefen-uebersicht.de.png)
 
 Oeffne danach jede Arbeit einzeln. Links siehst du das Scan-Bild, rechts den erkannten Text zeilenweise. Unsichere Stellen sind gelb markiert. Klicke darauf und korrigiere den Text im Feld darunter. Erst wenn keine unsichere Stelle mehr uebrig ist, kannst du die Arbeit bestaetigen.
 
-[SCREENSHOT: Pruefen-Detailansicht mit gelb markierter Stelle]
+![Pruefen-Detailansicht mit gelb markierter Stelle](screenshots/11-pruefen-detail.de.png)
 
 ## Schritt 9: Bewerten
 
 Klicke auf "Bewerten". Waehle zuerst die Fach-Konfiguration fuer diese Runde aus und klicke auf "Uebernehmen". Danach auf "Bewertung starten". Das erstellt fuer jede geprueft-bestaetigte Arbeit Punkte, Begruendungen mit Zitaten und einen Feedback-Entwurf.
 
-[SCREENSHOT: Bewerten-Uebersicht mit Note je Arbeit]
+![Bewerten-Uebersicht mit Note je Arbeit](screenshots/12-bewerten-uebersicht.de.png)
 
 Oeffne eine Arbeit. Du siehst die Kriterien als Karten: Punktzahl, Begruendung mit Zitaten aus dem Text, und darunter den Feedback-Entwurf (Staerke, Beobachtungen, naechster Schritt, optional ein Uebungsvorschlag). Alles ist aenderbar. Die Gesamtnote oben aktualisiert sich sofort, wenn du eine Punktzahl aenderst.
 
-[SCREENSHOT: Bewerten-Detailansicht mit Kriterien-Karten]
+![Bewerten-Detailansicht mit Kriterien-Karten](screenshots/13-bewerten-karten.de.png)
 
 Klicke auf "Aenderungen sichern", um deine Korrekturen zu speichern, und auf "Arbeit freigeben", wenn du zufrieden bist. Erst freigegebene Arbeiten koennen exportiert werden.
 
@@ -106,7 +129,7 @@ Klicke auf "Aenderungen sichern", um deine Korrekturen zu speichern, und auf "Ar
 
 Klicke auf "Export". Waehle die Runde. Unter "Feedback-Blaetter herunterladen" laedst du das PDF fuer eine einzelne Arbeit herunter, oder alle auf einmal. Jedes Feedback-PDF hat drei Seiten: Note und Staerke, Beobachtungen mit Zitaten, naechster Schritt und Uebungsvorschlag.
 
-[SCREENSHOT: Export-Seite mit Download-Liste]
+![Export-Seite mit Download-Liste](screenshots/14-export.de.png)
 
 Zusaetzlich kannst du eine Klassenuebersicht als PDF herunterladen (Tabelle mit Kuerzel, Punkten je Bereich, Note) und, falls du beim Bewerten Korrekturen vorgenommen hast, eine Korrektur-Datei fuer die naechste Auswertungsrunde (siehe `HAEUFIGE-FRAGEN.md`).
 
