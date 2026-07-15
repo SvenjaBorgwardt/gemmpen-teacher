@@ -57,8 +57,8 @@ if /I "%~1"=="__wait_and_open_browser__" (
   goto :eof
 )
 
-set "DEFAULT_VISION_MODEL=gemma3:12b"
-set "DEFAULT_GRADING_MODEL=gemma3:12b"
+set "DEFAULT_VISION_MODEL=gemma4:12b"
+set "DEFAULT_GRADING_MODEL=gemma4:12b"
 set "VISION_MODEL=%DEFAULT_VISION_MODEL%"
 set "GRADING_MODEL=%DEFAULT_GRADING_MODEL%"
 
@@ -313,7 +313,7 @@ exit /b 0
 
 :extract_json_string
 REM Sehr einfache Extraktion des ersten "..."-Werts aus einer Textzeile wie
-REM  "visionModel": "gemma3:12b"
+REM  "visionModel": "gemma4:12b"
 REM %1 = Name der Eingabe-Variable, %2 = Name der Ziel-Variable.
 setlocal EnableDelayedExpansion
 set "V=!%~1!"

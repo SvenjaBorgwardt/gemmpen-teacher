@@ -175,8 +175,8 @@ APP_CONFIG_FILE="$APP_DIR/data/config/app.json"
 # mit data/config/app.json uebereinstimmen (Stand: ZU BESTAETIGEN durch
 # Svenja, siehe UEBERGABE.md). Wenn Svenja die Defaults im Code aendert,
 # hier mitziehen.
-DEFAULT_VISION_MODEL="gemma3:12b"
-DEFAULT_GRADING_MODEL="gemma3:12b"
+DEFAULT_VISION_MODEL="gemma4:12b"
+DEFAULT_GRADING_MODEL="gemma4:12b"
 
 VISION_MODEL="$DEFAULT_VISION_MODEL"
 GRADING_MODEL="$DEFAULT_GRADING_MODEL"

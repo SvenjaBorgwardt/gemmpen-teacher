@@ -29,7 +29,7 @@ geprueft bzw. erledigt:
    aus `data/config/app.json` gelesen (Felder `visionModel` und
    `gradingModel`). Gibt es diese Datei noch nicht, werden dieselben
    Standardwerte verwendet wie in der App selbst
-   (`DEFAULT_APP_CONFIG` in `lib/storage.ts`, aktuell `gemma3:12b` fuer
+   (`DEFAULT_APP_CONFIG` in `lib/storage.ts`, aktuell `gemma4:12b` fuer
    beide Einsatzzwecke, siehe Hinweis unten). Fehlt ein Modell, laedt das
    Skript es automatisch herunter (`ollama pull`) und weist ausdruecklich
    darauf hin, dass das beim ersten Mal 10 bis 20 Minuten dauern kann und
@@ -55,7 +55,7 @@ selbst verwendet:
 - Quelle in der App: `data/config/app.json` (Felder `visionModel`,
   `gradingModel`), mit den Defaults aus `DEFAULT_APP_CONFIG` in
   `lib/storage.ts`, falls die Datei noch nicht existiert.
-- Stand dieses Arbeitspakets: beide Modelle stehen auf `gemma3:12b`. Das
+- Stand dieses Arbeitspakets: beide Modelle stehen auf `gemma4:12b`. Das
   ist laut `lib/storage.ts` **ZU BESTAETIGEN durch Svenja** (siehe
   UEBERGABE.md, Abschnitt AP3). Wenn sich das aendert (z. B. weil ein
   anderes Modell auf dem Zielrechner sinnvoller ist), muss in den
@@ -135,7 +135,7 @@ Mac:
 2. Ollama beenden (falls es laeuft) und `install/start-mac.command`
    doppelklicken: Schritt 3 sollte Ollama automatisch starten.
 3. Falls das Modell aus `data/config/app.json` (oder der Standard
-   `gemma3:12b`) noch nicht lokal vorhanden ist: einmal den echten
+   `gemma4:12b`) noch nicht lokal vorhanden ist: einmal den echten
    Download-Fortschritt und die Wartezeit-Meldung ("10 bis 20 Minuten")
    erleben.
 4. Beim allerersten Start: pruefen, dass `npm install` und danach
