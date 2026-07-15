@@ -22,7 +22,7 @@ Oeffne den Ordner mit GemmPen Teacher. Darin liegt ein Ordner `install`. Doppelk
 - Mac: `start-mac.command`
 - Windows: `start-windows.bat`
 
-[SCREENSHOT: Ordner install mit den beiden Startdateien]
+![Ordner install mit den beiden Startdateien](screenshots/02-install-ordner.png)
 
 ### Beim ersten Mal: dein Rechner zeigt vielleicht eine Sicherheitsmeldung
 
@@ -35,7 +35,7 @@ Weil GemmPen Teacher ein kleines, kostenloses Programm ist und nicht aus einem g
 3. Waehle im kleinen Menue "Oeffnen".
 4. Dieselbe Meldung erscheint noch einmal, jetzt aber mit einem Knopf "Oeffnen". Klicke auf "Oeffnen". Das machst du nur einmal. Jeder weitere Start ist ein ganz normaler Doppelklick.
 
-[SCREENSHOT: Mac-Sicherheitsmeldung mit dem Knopf Oeffnen]
+![Mac-Sicherheitsmeldung mit dem Knopf Oeffnen](screenshots/03-mac-sicherheitsmeldung.png)
 
 **Auf Windows.** Wenn ein blaues Fenster "Der Computer wurde durch Windows geschuetzt" erscheint:
 
@@ -43,7 +43,7 @@ Weil GemmPen Teacher ein kleines, kostenloses Programm ist und nicht aus einem g
 2. Unten erscheint ein Knopf "Trotzdem ausfuehren". Klicke darauf.
 3. Das machst du nur einmal.
 
-[SCREENSHOT: Windows-SmartScreen mit Weitere Informationen und Trotzdem ausfuehren]
+![Windows-SmartScreen mit Weitere Informationen und Trotzdem ausfuehren](screenshots/04-windows-smartscreen.png)
 
 Fragt dein Rechner zusaetzlich, ob Node.js oder Ollama Aenderungen vornehmen duerfen, gehoert das zu deren eigener Installation und du kannst es erlauben.
 
@@ -56,7 +56,7 @@ Das Startfenster prueft jetzt der Reihe nach:
 5. Ob alle Bausteine der App installiert sind. Beim ersten Start dauert das etwas.
 6. Danach startet die App und oeffnet sich automatisch im Browser unter `localhost:3000`.
 
-[SCREENSHOT: Startfenster waehrend des Downloads der Auswertung]
+![Startfenster waehrend des Downloads der Auswertung](screenshots/05-startfenster.png)
 
 Bleibt irgendwo eine Meldung stehen, sagt sie dir immer, was zu tun ist. Es gibt keinen stillen Abbruch. Beim zweiten Start geht alles deutlich schneller, weil Download und Installation dann schon erledigt sind.
 
@@ -84,7 +84,7 @@ Klicke auf "Faecher" oder oeffne den Ordner `public/templates`. Dort liegen zwei
 
 Drucke die passende Vorlage fuer jede Schuelerin und jeden Schueler aus. Achte im Druckdialog darauf, dass **100 Prozent Skalierung** eingestellt ist und **"An Seite anpassen" ausgeschaltet** ist. Sonst stimmen die Eckmarker nicht mehr und die spaetere Erkennung wird ungenauer.
 
-[SCREENSHOT: Ausgedruckte Vorlage mit den vier Eckmarkern]
+![Ausgedruckte Vorlage mit den vier Eckmarkern](screenshots/06-vorlage-eckmarker.png)
 
 ## Schritt 6: Arbeiten schreiben lassen und einsammeln
 

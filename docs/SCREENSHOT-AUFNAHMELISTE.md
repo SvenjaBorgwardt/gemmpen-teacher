@@ -1,73 +1,29 @@
-# Screenshot-Aufnahmeliste (interne Arbeitshilfe)
+# Screenshot-Uebersicht (interne Notiz)
 
-Diese Datei ist kein Endnutzer-Dokument, sondern eine Checkliste zum Erstellen der Bilder fuer
-`ERSTE-SCHRITTE.md` (Deutsch) und `en/GETTING-STARTED.md` (Englisch).
+Alle Abbildungen in `ERSTE-SCHRITTE.md` (Deutsch) und `en/GETTING-STARTED.md` (Englisch) sind
+eingebaut. Die Bilder liegen in `docs/screenshots/` (`*.de.png` / `*.en.png` fuer die
+App-Bildschirme, plus die sprachneutralen `01`- bis `06`-Dateien).
 
-## Was schon erledigt ist
+## Echte Aufnahmen
 
-Die **App-Screenshots sind fertig und in beiden Anleitungen eingebaut** - je 9 Bilder pro Sprache:
-die Ollama-Download-Seite plus die acht App-Bildschirme (Einstellungen mit gruenem Status,
-Einrichten-Assistent, Hochladen, Pruefen-Uebersicht, Pruefen-Detail mit gelber Markierung,
-Bewerten-Uebersicht, Bewerten-Detail, Export). Deutsch und Englisch getrennt aufgenommen.
-Die Bilder liegen in `docs/screenshots/` (`*.de.png` / `*.en.png`, plus das neutrale
-`01-ollama-download.png`).
+- Die neun App-Bildschirme (Einstellungen, Einrichten, Hochladen, Pruefen-Uebersicht,
+  Pruefen-Detail, Bewerten-Uebersicht, Bewerten-Detail, Export) sind echte Screenshots der
+  laufenden App, getrennt in Deutsch und Englisch aufgenommen.
+- `01-ollama-download.png` ist die echte Seite ollama.com.
+- `06-vorlage-eckmarker.png` ist die echte Druckvorlage, direkt aus
+  `public/templates/vorlage-linien.pdf` gerendert.
 
-## Was noch fehlt: 5 Handaufnahmen
+## Nachbildungen (bei Gelegenheit durch echte Aufnahmen ersetzbar)
 
-Diese fuenf brauchen deinen eigenen Rechner, ein Betriebssystem-Fenster oder einen Ausdruck und
-lassen sich nicht automatisch erzeugen. Alle fuenf sind **sprachneutral**: du nimmst sie einmal auf,
-dasselbe Bild wird in beide Anleitungen eingebaut. Es sind keine echten Schuelerdaten im Bild, also
-unbedenklich.
+Diese vier sind sauber gestaltete Nachbildungen, keine Fotos vom echten System, weil sie einen
+bestimmten Zustand auf dem eigenen Rechner braeuchten. Inhaltlich stimmen sie (echte Skript-Texte,
+korrekte Knopf-Beschriftungen), optisch koennen sie je nach Betriebssystem-Version leicht
+abweichen. Wer mag, ersetzt sie spaeter durch echte Aufnahmen unter demselben Dateinamen:
 
-**02 - install-Ordner mit den Startdateien**
-Platzhalter: "install folder showing both start files" / "Ordner install mit den beiden Startdateien"
-Wo: Finder (Mac) oder Explorer (Windows), im Ordner `install`. Drauf: `start-mac.command`,
-`start-windows.bat` und `README.md` gut lesbar. Dateiname: `02-install-ordner.png`.
+- `02-install-ordner.png` - Ordner install mit den Startdateien (Finder-Nachbildung)
+- `03-mac-sicherheitsmeldung.png` - macOS-Sicherheitsdialog mit Oeffnen-Knopf
+- `04-windows-smartscreen.png` - Windows-SmartScreen mit Trotzdem-ausfuehren
+- `05-startfenster.png` - Startfenster waehrend des Modell-Downloads (echte Skript-Texte)
 
-**03 - Mac-Sicherheitsmeldung mit Oeffnen-Knopf**
-Platzhalter: "Mac security message with the Open button" / "Mac-Sicherheitsmeldung mit dem Knopf Oeffnen"
-Wo: Nur auf einem Mac. Das zweite Fenster (nach Rechtsklick auf `start-mac.command`), das einen Knopf
-"Oeffnen" zeigt. Erscheint nur beim allerersten Start - gleich dann aufnehmen, bevor du auf "Oeffnen"
-klickst. Dateiname: `03-mac-sicherheitsmeldung.png`.
-
-**04 - Windows-SmartScreen**
-Platzhalter: "Windows SmartScreen with More info and Run anyway" / "Windows-SmartScreen mit Weitere
-Informationen und Trotzdem ausfuehren"
-Wo: Nur auf einem Windows-Rechner. Das blaue Fenster "Der Computer wurde durch Windows geschuetzt",
-nach Klick auf "Weitere Informationen". Ebenfalls nur beim allerersten Start.
-Dateiname: `04-windows-smartscreen.png`.
-
-**05 - Startfenster waehrend des Downloads**
-Platzhalter: "start window during the download" / "Startfenster waehrend des Downloads der Auswertung"
-Wo: Das Terminal-/Startfenster, das die 6 Schritte prueft und gerade beim Download der Auswertung
-steht (Schritt 4). Dateiname: `05-startfenster.png`.
-
-**06 - Ausgedruckte Vorlage mit den vier Eckmarkern**
-Platzhalter: "printed template showing the four corner markers" / "Ausgedruckte Vorlage mit den vier
-Eckmarkern"
-Wo: Ein wirklich ausgedrucktes Blatt (`public/templates/vorlage-linien.pdf`) gerade von oben
-fotografiert, alle vier Eckmarker sichtbar. Dateiname: `06-vorlage-eckmarker.png`.
-
-## Aufnehmen und einbauen
-
-- Sauberes Bild: Fenster auf ruhige Groesse, Lesezeichenleiste und private Symbole ausblenden, eng
-  zuschneiden, als PNG speichern, nichts Privates im Hintergrund.
-- Ablegen in `docs/screenshots/` unter dem oben genannten Dateinamen.
-- Dann den passenden `[SCREENSHOT: ...]`-Platzhalter durch ein Bild-Tag ersetzen. Der Pfad ist relativ
-  zur jeweiligen Anleitung:
-  - In `ERSTE-SCHRITTE.md` (liegt in `docs/`): `![Ordner install ...](screenshots/02-install-ordner.png)`
-  - In `en/GETTING-STARTED.md` (liegt in `docs/en/`): `![install folder ...](../screenshots/02-install-ordner.png)`
-- Der Text in den eckigen Klammern ist der Alt-Text (kurze Beschreibung fuer Vorlese-Programme).
-
-## Abhaken
-
-```
-[ ] 02 install-Ordner       (Mac ODER Windows)
-[ ] 03 Mac-Warnung          (nur Mac, erster Start)
-[ ] 04 Windows-Warnung      (nur Windows, erster Start)
-[ ] 05 Startfenster         (erster Start, waehrend Download)
-[ ] 06 gedruckte Vorlage    (Ausdruck fotografieren)
-
-[ ] alle fuenf Platzhalter in beiden Anleitungen ersetzt
-[ ] diese Datei geloescht
-```
+Zum Ersetzen: neue Datei unter gleichem Namen in `docs/screenshots/` ablegen, fertig. Die
+Einbindung in den Anleitungen bleibt unveraendert.
