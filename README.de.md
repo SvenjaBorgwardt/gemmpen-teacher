@@ -24,6 +24,8 @@ Du brauchst keine Programmierkenntnisse.
    - Mac: `start-mac.command`
    - Windows: `start-windows.bat`
 
+Beim allerersten Mal zeigt dein Mac oder Windows hier eventuell eine einmalige Sicherheitswarnung. Sie kommt vom Betriebssystem, nicht von der App. Die [Erste-Schritte-Anleitung](docs/ERSTE-SCHRITTE.md) zeigt den einen Klick, der daran vorbeiführt.
+
 Das Startfenster macht den Rest von allein. Es startet Ollama, lädt beim ersten Mal herunter, was es braucht, und öffnet dann die App im Browser. Der erste Start kann wegen dieses Downloads 10 bis 20 Minuten dauern. Lass das Fenster in dieser Zeit einfach offen. Jeder Start danach geht viel schneller.
 
 Wenn eine Meldung erscheint, sagt sie dir immer, was als Nächstes zu tun ist. Nichts bricht still ab.
