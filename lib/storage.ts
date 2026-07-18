@@ -151,8 +151,8 @@ export async function deleteConfig(id: string): Promise<void> {
  */
 export const DEFAULT_APP_CONFIG: Omit<AppConfig, "updatedAt"> = {
   ollamaBaseUrl: "http://localhost:11434",
-  visionModel: "gemma3:12b",
-  gradingModel: "gemma3:12b",
+  visionModel: "gemma4:12b",
+  gradingModel: "gemma4:12b",
 };
 
 function appConfigFile(): string {
