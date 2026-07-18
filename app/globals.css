@@ -149,6 +149,20 @@ h1, h2, h3, h4 {
   pointer-events: none;
 }
 
+/*
+  Papier-Panel (Landing): ein leicht aufgehelltes Creme-Feld mit feinem
+  Gold-Punktraster - der handgemachte Notizblock-Charakter, nicht der glatte
+  SaaS-Verlauf. Weisse Karten (gp-card) heben sich per Schatten davon ab.
+  Reines CSS, keine externen Bilder (Offline-Ethos).
+*/
+.paper-panel {
+  background-color: color-mix(in srgb, var(--paper) 90%, #ffffff);
+  background-image: radial-gradient(circle at 1px 1px, rgba(133, 97, 7, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
 /* Bewegung zuruecknehmen, wenn die Nutzerin das im System eingestellt hat. */
 @media (prefers-reduced-motion: reduce) {
   *,

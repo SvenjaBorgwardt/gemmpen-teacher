@@ -89,8 +89,20 @@ export function Nav() {
   return (
     <header className="border-b border-line bg-paper-raised">
       <div className="max-w-5xl mx-auto px-6 py-3 flex items-center gap-6">
-        <Link href="/" className="font-serif text-2xl font-semibold text-ink shrink-0">
-          {t("app.name")}
+        <Link
+          href="/"
+          aria-label={t("app.name")}
+          className="flex items-center gap-2 shrink-0"
+        >
+          {/* Marke: Federkiel-Zeichen (Signatur) neben dem Schriftzug */}
+          <img
+            src="/logo-mark.png"
+            alt=""
+            width={19}
+            height={28}
+            className="h-7 w-auto"
+          />
+          <span className="font-serif text-2xl font-semibold text-ink">{t("app.name")}</span>
         </Link>
 
         {/* Ab md: Punkte inline */}
