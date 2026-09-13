@@ -43,6 +43,19 @@ Full walkthrough with pictures: [Getting started](docs/en/GETTING-STARTED.md).
 
 It is built for text-based subjects, for example English, German, or Business. It is not made for maths, formulas, or multiple choice.
 
+## What has been tested so far
+
+One setting: English writing with German vocational IT students at B1 and B2 level, marked against my own criteria. That is where the app has actually been used with real classes.
+
+Everything else is built to work but untested, so treat it as a first try rather than a promise:
+
+- **Other languages.** The app passes your language straight through to the model, and how well that works depends on the model, not on the app. English is the case that has been checked.
+- **Other subjects.** Subjects with clear marking criteria should transfer well. In argument-based subjects such as Business, the points are reliable while a subtly weak argument is harder for the model to spot.
+- **Maths, law, and formulas.** Outside what this app is for, because one missed error changes the whole verdict there.
+- **Handwriting.** Checked with one scanner and one class. Unusual handwriting, pencil, and blurry photos make recognition worse.
+
+Every piece of feedback is a draft for you to check, and the whole app is built around that step.
+
 ## Your data stays with you
 
 All student data stays in one folder called `data` on your computer. Nothing is uploaded anywhere. Because of that, keeping it safe and deleting it when you no longer need it is your responsibility. The privacy guide explains this in plain steps: [Privacy and your responsibility](docs/en/PRIVACY.md).

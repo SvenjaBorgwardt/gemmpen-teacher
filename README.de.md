@@ -43,6 +43,19 @@ Ausführliche Anleitung mit Bildern: [Erste Schritte](docs/ERSTE-SCHRITTE.md).
 
 Die App ist für textbasierte Fächer gemacht, zum Beispiel Englisch, Deutsch oder Wirtschaft. Sie ist nicht für Mathe, Formeln oder Multiple Choice gedacht.
 
+## Was bisher erprobt ist
+
+Eine Situation: Englisch-Schreibunterricht mit IT-Auszubildenden auf B1- und B2-Niveau, bewertet nach meinen eigenen Kriterien. Dort ist die App mit echten Klassen im Einsatz gewesen.
+
+Alles andere ist so gebaut, dass es funktionieren sollte, aber es ist noch nicht erprobt. Sieh es als ersten Versuch, nicht als Zusage:
+
+- **Andere Sprachen.** Die App reicht deine Sprache direkt an das Modell weiter, die Qualität hängt also am Modell und nicht an der App. Geprüft ist Englisch.
+- **Andere Fächer.** Fächer mit klaren Bewertungskriterien lassen sich gut übertragen. In argumentativen Fächern wie Wirtschaft sitzen die Punkte verlässlich, ein fein danebenliegendes Argument erkennt das Modell schwerer.
+- **Mathe, Recht und Formeln.** Dafür ist die App nicht gedacht, weil dort ein einziger übersehener Fehler das ganze Urteil kippt.
+- **Handschrift.** Geprüft mit einem Scanner und einer Lerngruppe. Ungewöhnliche Handschrift, Bleistift und unscharfe Fotos verschlechtern die Erkennung.
+
+Jede Rückmeldung ist ein Entwurf, den du prüfst, und darauf ist die ganze App gebaut.
+
 ## Deine Daten bleiben bei dir
 
 Alle Schülerdaten bleiben in einem Ordner namens `data` auf deinem Rechner. Nichts wird irgendwohin hochgeladen. Dadurch liegt es auch in deiner Verantwortung, sie sicher aufzubewahren und zu löschen, wenn du sie nicht mehr brauchst. Der Datenschutz-Leitfaden erklärt das in einfachen Schritten: [Datenschutz und deine Verantwortung](docs/DATENSCHUTZ.md).
